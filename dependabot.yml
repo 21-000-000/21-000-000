@@ -1,0 +1,94 @@
+# Dependabot configuration file for 21-000-000 organization
+# Automatically checks for outdated dependencies and creates pull requests
+# Especially important for security updates in crypto projects
+
+version: 2
+updates:
+  # Check for updates to GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    # Limit the number of open PRs that dependabot can have
+    open-pull-requests-limit: 5
+    
+  # Check for updates to npm packages
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "javascript"
+      - "security" # Adding security label for crypto projects
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    # Group all dependency updates together
+    groups:
+      development-dependencies:
+        dependency-type: "development"
+      production-dependencies:
+        dependency-type: "production"
+    # Additional security settings
+    security-updates-only: false  # Set to true if you only want security updates
+    versioning-strategy: "auto"
+    
+  # Check for updates to Python packages
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "python"
+      - "security"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    
+  # Check for updates to Docker images
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "docker"
+      - "security"
+    commit-message:
+      prefix: "docker"
+      include: "scope"
+      
+  # Additional settings for cryptocurrency-specific repo patterns
+  # Configuration for crypto libraries (if applicable)
+  - package-ecosystem: "npm"
+    directory: "/crypto" # Adjust this path as needed
+    schedule:
+      interval: "daily" # More frequent for security-critical paths
+    labels:
+      - "dependencies"
+      - "security"
+      - "crypto"
+    commit-message:
+      prefix: "deps(crypto)"
+      include: "scope"
+    # For crypto libraries, apply stricter version checking
+    allow:
+      # Only allow updates to patch and minor versions for crypto libraries
+      - dependency-type: "production"
+        update-type: "semver:patch"
+      - dependency-type: "production"
+        update-type: "semver:minor"
+    # Set strict security scanning for crypto libraries
+    ignore:
+      # Don't update libraries that might introduce breaking changes
+      - dependency-name: "*"
+        update-types: ["version-update:semver:major"]
+

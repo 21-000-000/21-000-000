@@ -1,0 +1,134 @@
+name: 🐛 Nahlášení chyby / Bug Report
+description: Nahlaste chybu, která vám brání v používání projektu / Report a bug that prevents you from using the project
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # 🇨🇿 Hlášení chyby
+        Děkujeme za nahlášení chyby! Vyplňte prosím následující informace, které nám pomohou problém rychle vyřešit.
+        
+        # 🇬🇧 Bug Report
+        Thanks for reporting a bug! Please fill in the following information to help us resolve the issue quickly.
+
+  - type: input
+    id: version
+    attributes:
+      label: Verze / Version
+      description: |
+        🇨🇿 Jakou verzi projektu používáte?
+        🇬🇧 What version of the project are you using?
+      placeholder: v1.0.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Prostředí / Environment
+      description: |
+        🇨🇿 Na jakém prostředí jste chybu zaznamenali?
+        🇬🇧 On which environment did you encounter the bug?
+      options:
+        - Production
+        - Development
+        - Testing
+        - Staging
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Co se stalo? / What happened?
+      description: |
+        🇨🇿 Popište chybu a očekávané chování.
+        🇬🇧 Describe the bug and the expected behavior.
+      placeholder: |
+        🇨🇿 Popis chyby a co jste očekávali, že se stane místo toho.
+        🇬🇧 Description of the bug and what you expected to happen instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Kroky k reprodukci / Steps to reproduce
+      description: |
+        🇨🇿 Jak můžeme chybu reprodukovat?
+        🇬🇧 How can we reproduce the bug?
+      placeholder: |
+        🇨🇿 Například:
+        1. Otevřít...
+        2. Kliknout na...
+        3. Procházet dolů na...
+        4. Vidět chybu...
+        
+        🇬🇧 For example:
+        1. Open...
+        2. Click on...
+        3. Scroll down to...
+        4. See error...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevantní logy / Relevant logs
+      description: |
+        🇨🇿 Vložte prosím relevantní logy nebo chybové zprávy, pokud jsou k dispozici.
+        🇬🇧 Please include any relevant logs or error messages if available.
+      render: shell
+    validations:
+      required: false
+
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: Prohlížeče / Browsers
+      description: |
+        🇨🇿 Pokud je to relevantní, v jakých prohlížečích jste chybu zaznamenali?
+        🇬🇧 If relevant, which browsers have you seen the issue on?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+        - Opera
+        - Brave
+        - Jiný / Other
+    validations:
+      required: false
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operační systém / Operating System
+      description: |
+        🇨🇿 Na jakém operačním systému jste chybu zaznamenali?
+        🇬🇧 On which operating system did you encounter the bug?
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - iOS
+        - Android
+        - Jiný / Other
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Dodatečný kontext / Additional context
+      description: |
+        🇨🇿 Jakékoliv další informace, které by mohly být relevantní pro tento problém.
+        🇬🇧 Any additional information that might be relevant to this issue.
+      placeholder: |
+        🇨🇿 Přidejte jakýkoliv další kontext nebo snímky obrazovky, pokud je to možné.
+        🇬🇧 Add any other context or screenshots if possible.
+    validations:
+      required: false
+

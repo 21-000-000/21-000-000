@@ -1,0 +1,267 @@
+name: Sync Files
+
+on:
+  # Spustí se při změnách v .github adresáři hlavního repozitáře
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - '.github/**'
+  # Umožňuje manuální spuštění
+  workflow_dispatch:
+    inputs:
+      target_repos:
+        description: 'Cílové repozitáře (oddělené čárkou) nebo "all" pro všechny'
+        required: false
+        default: 'all'
+        type: string
+      sync_mode:
+        description: 'Režim synchronizace'
+        required: true
+        default: 'soft'
+        type: choice
+        options:
+          - soft     # Přeskakuje existující soubory, které byly lokálně upraveny
+          - default  # Aktualizuje soubory, ale zachovává lokální změny, pokud je .sync-config.json
+          - force    # Přepisuje všechny soubory (s výjimkou těch v .sync-ignore)
+
+jobs:
+  prepare-targets:
+    name: Připravit seznam cílových repozitářů
+    runs-on: ubuntu-latest
+    outputs:
+      target_repos: ${{ steps.set-targets.outputs.repos }}
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Get target repositories
+        id: set-targets
+        run: |
+          if [[ "${{ github.event.inputs.target_repos }}" == "all" || "${{ github.event.inputs.target_repos }}" == "" ]]; then
+            # Získání seznamu všech repozitářů organizace, kromě aktuálního
+            REPOS=$(gh repo list 21-000-000 --json name -q '.[].name' | grep -v "21-000-000")
+            
+            # Výstup jako JSON pole
+            REPOS_JSON=$(echo $REPOS | jq -R 'split(" ")')
+            echo "repos=$REPOS_JSON" >> $GITHUB_OUTPUT
+          else
+            # Převod čárkou odděleného seznamu na JSON pole
+            REPOS=$(echo "${{ github.event.inputs.target_repos }}" | tr ',' ' ')
+            REPOS_JSON=$(echo $REPOS | jq -R 'split(" ")')
+            echo "repos=$REPOS_JSON" >> $GITHUB_OUTPUT
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+  sync-files:
+    name: Synchronizovat soubory
+    needs: prepare-targets
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repo: ${{ fromJson(needs.prepare-targets.outputs.target_repos) }}
+      fail-fast: false  # Pokračuje i když synchronizace jednoho repozitáře selže
+    
+    steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v3
+        with:
+          path: source-repo
+      
+      - name: Checkout target repository
+        uses: actions/checkout@v3
+        with:
+          repository: 21-000-000/${{ matrix.repo }}
+          path: target-repo
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      
+      - name: Create .sync-ignore if it doesn't exist
+        run: |
+          if [ ! -f "source-repo/.sync-ignore" ]; then
+            # Výchozí soubory, které nikdy nechceme synchronizovat
+            cat > source-repo/.sync-ignore << EOF
+            .git/
+            .gitignore
+            README.md
+            LICENSE
+            CODEOWNERS
+            # Specifické pro daný repozitář
+            .sync-ignore
+            .sync-config.json
+            EOF
+          fi
+      
+      - name: Prepare sync configuration
+        run: |
+          # Zkontrolovat, zda existuje konfigurační soubor v cílovém repozitáři
+          SYNC_CONFIG="target-repo/.sync-config.json"
+          SYNC_MODE="${{ github.event.inputs.sync_mode || 'default' }}"
+          
+          if [ ! -f "$SYNC_CONFIG" ]; then
+            # Vytvoříme výchozí konfiguraci
+            echo '{
+              "mode": "default",
+              "files": {
+                ".github/workflows/": { "protected": false },
+                ".github/ISSUE_TEMPLATE/": { "protected": false },
+                ".github/SECURITY.md": { "protected": false },
+                ".github/CODE_OF_CONDUCT.md": { "protected": false },
+                ".github/CONTRIBUTING.md": { "protected": false },
+                ".github/PULL_REQUEST_TEMPLATE.md": { "protected": false },
+                ".github/dependabot.yml": { "protected": false }
+              }
+            }' > "$SYNC_CONFIG"
+          fi
+          
+          # Zvolit režim synchronizace
+          if [ "$SYNC_MODE" == "force" ]; then
+            # V režimu force přepíšeme konfiguraci
+            python -c "
+import json
+with open('$SYNC_CONFIG', 'r') as f:
+    config = json.load(f)
+config['mode'] = 'force'
+for key in config['files']:
+    config['files'][key]['protected'] = False
+with open('$SYNC_CONFIG', 'w') as f:
+    json.dump(config, f, indent=2)
+            "
+          fi
+      
+      - name: Synchronize files
+        id: sync
+        run: |
+          # Načíst konfiguraci
+          SYNC_CONFIG="target-repo/.sync-config.json"
+          python -c "
+import json, os, shutil, re
+from pathlib import Path
+
+# Načíst konfiguraci
+with open('$SYNC_CONFIG', 'r') as f:
+    config = json.load(f)
+
+# Načíst .sync-ignore
+ignore_patterns = []
+if os.path.exists('source-repo/.sync-ignore'):
+    with open('source-repo/.sync-ignore', 'r') as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith('#'):
+                ignore_patterns.append(re.compile(line.replace('*', '.*')))
+
+# Získat seznam souborů ke kopírování
+files_to_copy = []
+for file_pattern, options in config['files'].items():
+    # Převést pattern na regex
+    pattern = file_pattern.replace('.', '\\.').replace('*', '.*')
+    is_protected = options.get('protected', False)
+    
+    # Procházet zdrojový adresář
+    for root, dirs, files in os.walk('source-repo'):
+        rel_path = os.path.relpath(root, 'source-repo')
+        if rel_path == '.':
+            rel_path = ''
+        
+        # Filtrovat podle ignore patterns
+        should_ignore = False
+        for ignore in ignore_patterns:
+            if ignore.match(rel_path):
+                should_ignore = True
+                break
+        if should_ignore:
+            continue
+        
+        # Procházet soubory
+        for file in files:
+            src_file_path = os.path.join(rel_path, file)
+            if any(ignore.match(src_file_path) for ignore in ignore_patterns):
+                continue
+            
+            # Zkontrolovat, zda soubor odpovídá vzoru
+            if re.match(pattern, src_file_path):
+                # Přidat soubor do seznamu
+                dst_file_path = os.path.join('target-repo', src_file_path)
+                # Zkontrolovat, zda existuje v cíli a je chráněný
+                if os.path.exists(dst_file_path) and is_protected and config['mode'] != 'force':
+                    # Přeskočit chráněný soubor
+                    print(f'Skipping protected file: {src_file_path}')
+                    continue
+                
+                files_to_copy.append((
+                    os.path.join('source-repo', src_file_path),
+                    dst_file_path
+                ))
+
+# Kopírovat soubory
+for src, dst in files_to_copy:
+    # Vytvořit adresáře, pokud neexistují
+    os.makedirs(os.path.dirname(dst), exist_ok=True)
+    # Kopírovat soubor
+    shutil.copy2(src, dst)
+    print(f'Copied: {src} -> {dst}')
+
+# Vrátit informaci o počtu zkopírovaných souborů
+print(f'::set-output name=copied_files::{len(files_to_copy)}')
+          "
+      
+      - name: Create Pull Request
+        if: steps.sync.outputs.copied_files != '0'
+        run: |
+          cd target-repo
+          
+          # Vytvořit větev
+          BRANCH_NAME="sync-files-$(date +%Y%m%d%H%M%S)"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git checkout -b $BRANCH_NAME
+          
+          # Commitnout změny
+          git add .
+          git commit -m "🔄 Synchronizace souborů z 21-000-000" -m "Automatická synchronizace souborů z hlavního repozitáře organizace."
+          git push origin $BRANCH_NAME
+          
+          # Vytvořit pull request
+          gh pr create \
+            --title "🔄 Synchronizace souborů z 21-000-000" \
+            --body "Tento Pull Request obsahuje automaticky synchronizované soubory z hlavního repozitáře organizace. Prosím zkontrolujte změny před schválením." \
+            --label "automated,maintenance" \
+            --repo "21-000-000/${{ matrix.repo }}"
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      
+      - name: Notify if nothing to sync
+        if: steps.sync.outputs.copied_files == '0'
+        run: echo "Žádné soubory nebyly synchronizovány pro ${{ matrix.repo }}. Vše je již aktuální nebo vyloučeno."
+
+  notify-completion:
+    name: Oznámit dokončení
+    needs: sync-files
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+      - name: Create job summary
+        run: |
+          echo "# 🔄 Synchronizace souborů" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Synchronizace byla dokončena pro následující repozitáře:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          for repo in ${{ join(fromJson(needs.prepare-targets.outputs.target_repos), ' ') }}; do
+            echo "- [$repo](https://github.com/21-000-000/$repo)" >> $GITHUB_STEP_SUMMARY
+          done
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Režim synchronizace: ${{ github.event.inputs.sync_mode || 'default' }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Pro každý repozitář byl vytvořen Pull Request, který musí být manuálně zkontrolován a schválen." >> $GITHUB_STEP_SUMMARY
+
