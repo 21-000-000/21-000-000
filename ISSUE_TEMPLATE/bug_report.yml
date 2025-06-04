@@ -1,23 +1,23 @@
-name: 🐛 Nahlášení chyby / Bug Report
-description: Nahlaste chybu, která vám brání v používání projektu / Report a bug that prevents you from using the project
+name: 🐛 Bug Report / Nahlášení chyby
+description: Report a bug that prevents you from using the project / Nahlaste chybu, která vám brání v používání projektu
 labels: ["bug", "triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        # 🇨🇿 Hlášení chyby
-        Děkujeme za nahlášení chyby! Vyplňte prosím následující informace, které nám pomohou problém rychle vyřešit.
-        
         # 🇬🇧 Bug Report
         Thanks for reporting a bug! Please fill in the following information to help us resolve the issue quickly.
+
+        # 🇨🇿 Hlášení chyby
+        Děkujeme za nahlášení chyby! Vyplňte prosím následující informace, které nám pomohou problém rychle vyřešit.
 
   - type: input
     id: version
     attributes:
-      label: Verze / Version
+      label: Version / Verze
       description: |
-        🇨🇿 Jakou verzi projektu používáte?
         🇬🇧 What version of the project are you using?
+        🇨🇿 Jakou verzi projektu používáte?
       placeholder: v1.0.0
     validations:
       required: true
@@ -25,10 +25,10 @@ body:
   - type: dropdown
     id: environment
     attributes:
-      label: Prostředí / Environment
+      label: Environment / Prostředí
       description: |
-        🇨🇿 Na jakém prostředí jste chybu zaznamenali?
         🇬🇧 On which environment did you encounter the bug?
+        🇨🇿 Na jakém prostředí jste chybu zaznamenali?
       options:
         - Production
         - Development
@@ -40,45 +40,45 @@ body:
   - type: textarea
     id: what-happened
     attributes:
-      label: Co se stalo? / What happened?
+      label: What happened? / Co se stalo?
       description: |
-        🇨🇿 Popište chybu a očekávané chování.
         🇬🇧 Describe the bug and the expected behavior.
+        🇨🇿 Popište chybu a očekávané chování.
       placeholder: |
-        🇨🇿 Popis chyby a co jste očekávali, že se stane místo toho.
         🇬🇧 Description of the bug and what you expected to happen instead.
+        🇨🇿 Popis chyby a co jste očekávali, že se stane místo toho.
     validations:
       required: true
 
   - type: textarea
     id: reproduction
     attributes:
-      label: Kroky k reprodukci / Steps to reproduce
+      label: Steps to reproduce / Kroky k reprodukci
       description: |
-        🇨🇿 Jak můžeme chybu reprodukovat?
         🇬🇧 How can we reproduce the bug?
+        🇨🇿 Jak můžeme chybu reprodukovat?
       placeholder: |
-        🇨🇿 Například:
-        1. Otevřít...
-        2. Kliknout na...
-        3. Procházet dolů na...
-        4. Vidět chybu...
-        
         🇬🇧 For example:
         1. Open...
         2. Click on...
         3. Scroll down to...
         4. See error...
+
+        🇨🇿 Například:
+        1. Otevřít...
+        2. Kliknout na...
+        3. Procházet dolů na...
+        4. Vidět chybu...
     validations:
       required: true
 
   - type: textarea
     id: logs
     attributes:
-      label: Relevantní logy / Relevant logs
+      label: Relevant logs / Relevantní logy
       description: |
-        🇨🇿 Vložte prosím relevantní logy nebo chybové zprávy, pokud jsou k dispozici.
         🇬🇧 Please include any relevant logs or error messages if available.
+        🇨🇿 Vložte prosím relevantní logy nebo chybové zprávy, pokud jsou k dispozici.
       render: shell
     validations:
       required: false
@@ -86,10 +86,10 @@ body:
   - type: dropdown
     id: browsers
     attributes:
-      label: Prohlížeče / Browsers
+      label: Browsers / Prohlížeče
       description: |
-        🇨🇿 Pokud je to relevantní, v jakých prohlížečích jste chybu zaznamenali?
         🇬🇧 If relevant, which browsers have you seen the issue on?
+        🇨🇿 Pokud je to relevantní, v jakých prohlížečích jste chybu zaznamenali?
       multiple: true
       options:
         - Firefox
@@ -105,10 +105,10 @@ body:
   - type: dropdown
     id: operating-system
     attributes:
-      label: Operační systém / Operating System
+      label: Operating System / Operační systém
       description: |
-        🇨🇿 Na jakém operačním systému jste chybu zaznamenali?
         🇬🇧 On which operating system did you encounter the bug?
+        🇨🇿 Na jakém operačním systému jste chybu zaznamenali?
       options:
         - Windows
         - macOS
@@ -122,13 +122,13 @@ body:
   - type: textarea
     id: additional-context
     attributes:
-      label: Dodatečný kontext / Additional context
+      label: Additional context / Dodatečný kontext
       description: |
-        🇨🇿 Jakékoliv další informace, které by mohly být relevantní pro tento problém.
         🇬🇧 Any additional information that might be relevant to this issue.
+        🇨🇿 Jakékoliv další informace, které by mohly být relevantní pro tento problém.
       placeholder: |
-        🇨🇿 Přidejte jakýkoliv další kontext nebo snímky obrazovky, pokud je to možné.
         🇬🇧 Add any other context or screenshots if possible.
+        🇨🇿 Přidejte jakýkoliv další kontext nebo snímky obrazovky, pokud je to možné.
     validations:
       required: false
 

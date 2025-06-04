@@ -3,14 +3,14 @@
 
   # 21-000-000
 
-  <p>Česká Bitcoin komunita | Czech Bitcoin Community</p>
+  <p>Bitcoin Community</p>
 
   [![GitHub stars](https://img.shields.io/github/stars/21-000-000/21-000-000)](https://github.com/21-000-000/21-000-000/stargazers)
   [![GitHub license](https://img.shields.io/github/license/21-000-000/21-000-000)](https://github.com/21-000-000/21-000-000/blob/main/LICENSE)
   [![Twitter Follow](https://img.shields.io/twitter/follow/21_000_000?style=social)](https://twitter.com/21_000_000)
   [![Website](https://img.shields.io/website?url=https%3A%2F%2F21-000-000.github.io)](https://21-000-000.github.io)
 
-  <p><a href="#-o-nás">🇨🇿 Česky</a> | <a href="#-about-us">🇬🇧 English</a></p>
+  <p><a href="#-about-us">🇬🇧 English</a> | <a href="#-o-nás">🇨🇿 Česky</a></p>
 </div>
 
 ---
