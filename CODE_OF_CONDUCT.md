@@ -45,7 +45,7 @@ Tento Kodex chování platí jak v prostorách projektu, tak na veřejných pros
 
 ## Proces řešení konfliktů a porušení
 
-Stížnosti na urážlivé, obtěžující nebo jinak nepřijatelné chování mohou být hlášeny kontaktováním týmu projektu na conduct@21-000-000.org. Všechny stížnosti budou přezkoumány a vyšetřeny a vyústí v reakci, která je považována za nezbytnou a vhodnou okolnostem. Projektový tým je povinen zachovávat důvěrnost ve vztahu k oznamovateli incidentu. Další podrobnosti o specifických politikách prosazování mohou být zveřejněny samostatně.
+Stížnosti na urážlivé, obtěžující nebo jinak nepřijatelné chování mohou být hlášeny kontaktováním týmu projektu na conduct@21-000-000.github.io. Všechny stížnosti budou přezkoumány a vyšetřeny a vyústí v reakci, která je považována za nezbytnou a vhodnou okolnostem. Projektový tým je povinen zachovávat důvěrnost ve vztahu k oznamovateli incidentu. Další podrobnosti o specifických politikách prosazování mohou být zveřejněny samostatně.
 
 ### Postup při řešení porušení:
 
@@ -60,7 +60,7 @@ V závažných případech můžeme přistoupit rovnou k trvalému zákazu.
 
 Pro nahlášení problémů s kodexem chování kontaktujte:
 
-* Email: conduct@21-000-000.org
+* Email: conduct@21-000-000.github.io
 * Moderátoři komunity: @moderator1, @moderator2 (na GitHub, Discord, Telegram)
 
 ## Důraz na transparentnost a bezpečnost
@@ -126,7 +126,7 @@ This Code of Conduct applies both within project spaces and in public spaces whe
 
 ## Conflict Resolution and Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at conduct@21-000-000.org. All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at conduct@21-000-000.github.io. All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.
 
 ### Enforcement Process:
 
@@ -141,7 +141,7 @@ For severe violations, we may proceed directly to a permanent ban.
 
 For reporting code of conduct issues, contact:
 
-* Email: conduct@21-000-000.org
+* Email: conduct@21-000-000.github.io
 * Community moderators: @moderator1, @moderator2 (on GitHub, Discord, Telegram)
 
 ## Emphasis on Transparency and Security
