@@ -16,8 +16,8 @@ Náš název odkazuje na maximální počet Bitcoinů, které kdy budou existova
 
 Zde je přehled našich hlavních projektů:
 
-<!-- ### [21ooo.ooo](https://github.com/21-000-000/21ooo.ooo)
-Oficiální webové stránky organizace s informacemi, vzdělávacími materiály a aktualitami z Bitcoin světa. -->
+### [21-000-000.github.io](https://21-000-000.github.io) - (připravuje se)
+Webové stránky komunity s informacemi, vzdělávacími materiály a aktualitami z Bitcoin světa.
 
 ### [awesome-btc-cz](https://github.com/21-000-000/awesome-btc-cz)
 Kurátorovaný seznam českých Bitcoin zdrojů, služeb, obchodníků a komunitních projektů.
@@ -32,7 +32,7 @@ Sdílené konfigurační soubory pro vývojáře pracující na našich projekte
 
 Existuje mnoho způsobů, jak se můžete zapojit do naší komunity:
 
-1. **Přispívání do kódu** - Podívejte se na naše [otevřené issues](https://github.com/21-000-000/21-000-000/issues) a projděte si náš [návod pro přispěvatele](.github/CONTRIBUTING.md)
+1. **Přispívání do kódu** - Podívejte se na naše [otevřené issues](https://github.com/21-000-000/.github/issues) a projděte si náš [návod pro přispěvatele](.github/CONTRIBUTING.md)
 2. **Testování** - Pomáhejte testovat naše projekty a hlaste chyby nebo navrhujte vylepšení
 3. **Dokumentace** - Pomáhejte zlepšovat dokumentaci a vzdělávací materiály
 4. **Komunita** - Zapojte se do diskuzí a pomáhejte ostatním členům komunity
@@ -49,7 +49,7 @@ Pro začátek doporučujeme:
 - [Návod pro přispěvatele](.github/CONTRIBUTING.md) - Jak přispívat do našich projektů
 - [Šablona Pull Requestů](.github/PULL_REQUEST_TEMPLATE.md) - Formát pro vytváření pull requestů
 - [Bezpečnostní politika](.github/SECURITY.md) - Jak hlásit bezpečnostní problémy
-- [Wiki](https://github.com/21-000-000/21-000-000/wiki) - Podrobnější dokumentace a návody
+- [Wiki](https://github.com/21-000-000/.github/wiki) - Podrobnější dokumentace a návody
 
 ## Komunita a komunikace
 

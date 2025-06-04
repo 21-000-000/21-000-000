@@ -16,8 +16,8 @@ Our name refers to the maximum number of Bitcoins that will ever exist (21 milli
 
 Here is an overview of our main projects:
 
-<!-- ### [21ooo.ooo](https://21ooo.ooo) - (in progress)
-Official organization website with information, educational materials, and Bitcoin news. -->
+### [21-000-000.github.io](https://21-000-000.github.io) - (in progress)
+Official organization website with information, educational materials, and Bitcoin news.
 
 ### [awesome-btc-cz](https://github.com/21-000-000/awesome-btc-cz)
 Curated list of Czech Bitcoin resources, services, merchants, and community projects.
@@ -32,7 +32,7 @@ Shared configuration files for developers working on our projects.
 
 There are many ways you can get involved with our community:
 
-1. **Code Contributions** - Check out our [open issues](https://github.com/21-000-000/21-000-000/issues) and review our [contributor guidelines](.github/CONTRIBUTING.md)
+1. **Code Contributions** - Check out our [open issues](https://github.com/21-000-000/.github/issues) and review our [contributor guidelines](.github/CONTRIBUTING.md)
 2. **Testing** - Help test our projects and report bugs or suggest improvements
 3. **Documentation** - Help improve documentation and educational materials
 4. **Community** - Participate in discussions and help other community members
@@ -49,7 +49,7 @@ To get started, we recommend:
 - [Contribution Guidelines](.github/CONTRIBUTING.md) - How to contribute to our projects
 - [Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md) - Format for creating pull requests
 - [Security Policy](.github/SECURITY.md) - How to report security issues
-- [Wiki](https://github.com/21-000-000/21-000-000/wiki) - More detailed documentation and tutorials
+- [Wiki](https://github.com/21-000-000/.github/wiki) - More detailed documentation and tutorials
 
 ## Community and Communication
 
