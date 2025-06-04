@@ -56,17 +56,14 @@ Pro začátek doporučujeme:
 Zapojte se do naší komunity prostřednictvím těchto kanálů:
 
 - [GitHub Discussions](https://github.com/orgs/21-000-000/discussions) - Pro technické diskuze a dotazy
-<!-- - [Telegram](https://t.me/CzechBitcoinCommunity) - Pro rychlou komunikaci a novinky
-- [Discord](https://discord.gg/21-000-000) - Pro hlubší diskuze a spolupráci
-- [Twitter](https://twitter.com/21_000_000) - Pro aktuality a oznámení
+
+
+
 
 ## Bitcoin specifické informace
 
 ### Edukační zdroje
 - [Bitcoin whitepaper](https://bitcoin.org/bitcoin.pdf) - Původní dokument od Satoshi Nakamoto
-<!-- - [Naše příručka pro začátečníky](https://21ooo.ooo/beginners-guide) - Jak začít s Bitcoinem bezpečně -->
-<!-- - [Kurz Bitcoin vývojáře](https://21ooo.ooo/dev-course) - Naučte se vyvíjet Bitcoin aplikace -->
-
 ### Bezpečnostní zásady
 - Vždy používejte hardwarovou peněženku pro větší částky
 - Zálohujte své seed fráze (mnemonic) offline a na více místech
