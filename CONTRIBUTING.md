@@ -1,6 +1,6 @@
-# 🇬🇧 How to Contribute to 21-000-000 Projects
+# 🇬🇧 How to Contribute to 21.000.000 Projects
 
-Thank you for your interest in contributing to 21-000-000 organization projects! This document provides guidelines and best practices for contributors. Following these guidelines will ensure a smooth contribution process and help maintain high code quality.
+Thank you for your interest in contributing to 21.000.000 organization projects! This document provides guidelines and best practices for contributors. Following these guidelines will ensure a smooth contribution process and help maintain high code quality.
 
 ## Table of Contents
 
@@ -147,9 +147,9 @@ Thank you for your interest in contributing to 21-000-000 organization projects!
 
 ---
 
-# 🇨🇿 Jak přispívat do projektů 21-000-000
+# 🇨🇿 Jak přispívat do projektů 21.000.000
 
-Děkujeme za váš zájem přispět do projektů organizace 21-000-000! Tento dokument poskytuje pokyny a osvědčené postupy pro přispěvatele. Dodržování těchto pokynů zajistí hladký proces přispívání a pomůže udržet vysokou kvalitu kódu.
+Děkujeme za váš zájem přispět do projektů organizace 21.000.000! Tento dokument poskytuje pokyny a osvědčené postupy pro přispěvatele. Dodržování těchto pokynů zajistí hladký proces přispívání a pomůže udržet vysokou kvalitu kódu.
 
 ## Obsah
 

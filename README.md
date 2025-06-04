@@ -9,7 +9,7 @@
 
 # 🇬🇧 About this Repository
 
-This repository contains special files and GitHub settings for the 21-000-000 organization/project. The `.github` repository serves as a central place for storing default files that are used across all repositories in this organization.
+This repository contains special files and GitHub settings for the 21.000.000 organization/project. The `.github` repository serves as a central place for storing default files that are used across all repositories in this organization.
 
 ## Contents
 
@@ -37,7 +37,7 @@ The content of this repository is licensed under the [MIT License](LICENSE).
 
 # 🇨🇿 O tomto repozitáři
 
-Tento repozitář obsahuje speciální soubory a nastavení GitHub pro organizaci/projekt 21-000-000. Repozitář `.github` slouží jako centrální místo pro ukládání výchozích souborů, které se používají napříč všemi repozitáři v této organizaci.
+Tento repozitář obsahuje speciální soubory a nastavení GitHub pro organizaci/projekt 21.000.000. Repozitář `.github` slouží jako centrální místo pro ukládání výchozích souborů, které se používají napříč všemi repozitáři v této organizaci.
 
 ## Obsah
 

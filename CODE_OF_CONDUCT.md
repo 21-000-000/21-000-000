@@ -2,7 +2,7 @@
 
 ## Our Pledge
 
-In the interest of fostering an open and welcoming environment, we as contributors and maintainers of the 21-000-000 community pledge to make participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
+In the interest of fostering an open and welcoming environment, we as contributors and maintainers of the 21.000.000 community pledge to make participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
 ## Our Standards
 
@@ -66,7 +66,7 @@ For reporting code of conduct issues, contact:
 
 ## Emphasis on Transparency and Security
 
-The 21-000-000 community is built on principles of openness, transparency, and security. We commit to:
+The 21.000.000 community is built on principles of openness, transparency, and security. We commit to:
 
 * Transparent community governance and decision-making processes
 * Open knowledge sharing and education
@@ -84,7 +84,7 @@ This Code of Conduct is adapted from the [Contributor Covenant](https://www.cont
 
 ## Naše závazky
 
-V zájmu podpory otevřeného a přívětivého prostředí se my, jako přispěvatelé a správci komunity 21-000-000, zavazujeme zajistit účast v našem projektu a naší komunitě bez obtěžování pro všechny, bez ohledu na věk, tělesnou velikost, zdravotní postižení, etnický původ, pohlavní identitu a vyjádření, úroveň zkušeností, národnost, osobní vzhled, rasu, náboženství nebo sexuální identitu a orientaci.
+V zájmu podpory otevřeného a přívětivého prostředí se my, jako přispěvatelé a správci komunity 21.000.000, zavazujeme zajistit účast v našem projektu a naší komunitě bez obtěžování pro všechny, bez ohledu na věk, tělesnou velikost, zdravotní postižení, etnický původ, pohlavní identitu a vyjádření, úroveň zkušeností, národnost, osobní vzhled, rasu, náboženství nebo sexuální identitu a orientaci.
 
 ## Naše standardy
 
@@ -148,7 +148,7 @@ Pro nahlášení problémů s kodexem chování kontaktujte:
 
 ## Důraz na transparentnost a bezpečnost
 
-Komunita 21-000-000 je postavena na principech otevřenosti, transparentnosti a bezpečnosti. Zavazujeme se k:
+Komunita 21.000.000 je postavena na principech otevřenosti, transparentnosti a bezpečnosti. Zavazujeme se k:
 
 * Transparentnímu řízení komunity a rozhodovacím procesům
 * Otevřenému sdílení znalostí a vzdělávání
