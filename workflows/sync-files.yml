@@ -210,7 +210,8 @@ for src, dst in files_to_copy:
     print(f'Copied: {src} -> {dst}')
 
 # Return information about number of copied files
-print(f'::set-output name=copied_files::{len(files_to_copy)}')
+with open(os.environ['GITHUB_OUTPUT'], 'a') as github_output:
+    github_output.write(f'copied_files={len(files_to_copy)}\n')
           "
 
       - name: Create Pull Request
