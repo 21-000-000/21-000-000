@@ -55,7 +55,7 @@ To get started, we recommend:
 
 Get involved with our community through these channels:
 
-- [GitHub Discussions](https://github.com/21-000-000/21-000-000/discussions) - For technical discussions and questions
+- [GitHub Discussions](https://github.com/orgs/21-000-000/discussions) - For technical discussions and questions
 <!-- - [Telegram](https://t.me/CzechBitcoinCommunity) - For quick communication and news
 - [Discord](https://discord.gg/21-000-000) - For deeper discussions and collaboration
 - [Twitter](https://twitter.com/21_000_000) - For updates and announcements -->

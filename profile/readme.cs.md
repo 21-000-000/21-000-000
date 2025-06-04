@@ -55,7 +55,7 @@ Pro začátek doporučujeme:
 
 Zapojte se do naší komunity prostřednictvím těchto kanálů:
 
-- [GitHub Discussions](https://github.com/21-000-000/21-000-000/discussions) - Pro technické diskuze a dotazy
+- [GitHub Discussions](https://github.com/orgs/21-000-000/discussions) - Pro technické diskuze a dotazy
 <!-- - [Telegram](https://t.me/CzechBitcoinCommunity) - Pro rychlou komunikaci a novinky
 - [Discord](https://discord.gg/21-000-000) - Pro hlubší diskuze a spolupráci
 - [Twitter](https://twitter.com/21_000_000) - Pro aktuality a oznámení
