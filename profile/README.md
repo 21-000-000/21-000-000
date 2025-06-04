@@ -8,7 +8,7 @@
   [![GitHub stars](https://img.shields.io/github/stars/21-000-000/21-000-000)](https://github.com/21-000-000/21-000-000/stargazers)
   [![GitHub license](https://img.shields.io/github/license/21-000-000/21-000-000)](https://github.com/21-000-000/21-000-000/blob/main/LICENSE)
   [![Twitter Follow](https://img.shields.io/twitter/follow/21_000_000?style=social)](https://twitter.com/21_000_000)
-  [![Website](https://img.shields.io/website?url=https%3A%2F%2F21-000-000.github.io)](https://21-000-000.github.io)
+  [![Website](https://img.shields.io/website?url=https%3A%2F%2F21ooo.ooo)](https://21ooo.ooo)
 
   <p><a href="#-about-us">🇬🇧 English</a> | <a href="#-o-nás">🇨🇿 Česky</a></p>
 </div>
@@ -33,7 +33,7 @@ Our name refers to the maximum number of Bitcoins that will ever exist (21 milli
 
 Here is an overview of our main projects:
 
-<!-- ### [21-000-000.github.io](https://github.com/21-000-000/21-000-000.github.io)
+<!-- ### [21ooo.ooo](https://github.com/21-000-000/21ooo.ooo)
 Official organization website with information, educational materials, and Bitcoin news. -->
 
 ### [awesome-btc-cz](https://github.com/21-000-000/awesome-btc-cz)
@@ -81,8 +81,8 @@ Get involved with our community through these channels:
 
 ### Educational Resources
 - [Bitcoin whitepaper](https://bitcoin.org/bitcoin.pdf) - The original document by Satoshi Nakamoto
-- [Our Beginner's Guide](https://21-000-000.github.io/beginners-guide) - How to start with Bitcoin safely
-- [Bitcoin Developer Course](https://21-000-000.github.io/dev-course) - Learn to develop Bitcoin applications
+- [Our Beginner's Guide](https://21ooo.ooo/beginners-guide) - How to start with Bitcoin safely
+- [Bitcoin Developer Course](https://21ooo.ooo/dev-course) - Learn to develop Bitcoin applications
 
 ### Security Guidelines
 - Always use a hardware wallet for larger amounts
@@ -118,7 +118,7 @@ Náš název odkazuje na maximální počet Bitcoinů, které kdy budou existova
 
 Zde je přehled našich hlavních projektů:
 
-<!-- ### [21-000-000.github.io](https://github.com/21-000-000/21-000-000.github.io)
+<!-- ### [21ooo.ooo](https://github.com/21-000-000/21ooo.ooo)
 Oficiální webové stránky organizace s informacemi, vzdělávacími materiály a aktualitami z Bitcoin světa. -->
 
 ### [awesome-btc-cz](https://github.com/21-000-000/awesome-btc-cz)
@@ -166,8 +166,8 @@ Zapojte se do naší komunity prostřednictvím těchto kanálů:
 
 ### Edukační zdroje
 - [Bitcoin whitepaper](https://bitcoin.org/bitcoin.pdf) - Původní dokument od Satoshi Nakamoto
-<!-- - [Naše příručka pro začátečníky](https://21-000-000.github.io/beginners-guide) - Jak začít s Bitcoinem bezpečně -->
-<!-- - [Kurz Bitcoin vývojáře](https://21-000-000.github.io/dev-course) - Naučte se vyvíjet Bitcoin aplikace -->
+<!-- - [Naše příručka pro začátečníky](https://21ooo.ooo/beginners-guide) - Jak začít s Bitcoinem bezpečně -->
+<!-- - [Kurz Bitcoin vývojáře](https://21ooo.ooo/dev-course) - Naučte se vyvíjet Bitcoin aplikace -->
 
 ### Bezpečnostní zásady
 - Vždy používejte hardwarovou peněženku pro větší částky
@@ -187,7 +187,7 @@ Pokud chcete podpořit naši práci, můžete:
 
 <div align="center">
   <p>
-    <a href="https://21-000-000.github.io">Website</a> •
+    <a href="https://21ooo.ooo">Website</a> •
     <!-- <a href="https://twitter.com/21_000_000">Twitter</a> --> •
     <a href="https://github.com/21-000-000">GitHub</a> •
     <!-- <a href="https://t.me/21-000-000">Telegram</a> -->

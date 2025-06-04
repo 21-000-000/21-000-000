@@ -9,7 +9,7 @@ The security of our projects and protection of user data is our highest priority
 If you discover a security vulnerability in any 21-000-000 organization project, please follow these steps:
 
 1. **Do not disclose the vulnerability publicly** - Please do not report security issues via public GitHub issues.
-2. **Send an email** to security@21-000-000.github.io with the subject "SECURITY VULNERABILITY: [brief description]".
+2. **Send an email** to security@21ooo.ooo with the subject "SECURITY VULNERABILITY: [brief description]".
 3. **Provide details** - In your email, include:
    - Type of vulnerability
    - Complete description of the issue
@@ -77,8 +77,8 @@ When working with our projects, please adhere to the following security guidelin
 
 For reporting security issues, use:
 
-- Email: security@21-000-000.github.io
-- PGP Key: [download from our keyserver](https://keys.21-000-000.github.io/security.asc)
+- Email: security@21ooo.ooo
+- PGP Key: [download from our keyserver](https://keys.21ooo.ooo/security.asc)
 - Key fingerprint: `1234 5678 9ABC DEF0 1234 5678 9ABC DEF0 1234 5678`
 
 For regular issues, please use standard GitHub issues.
@@ -96,7 +96,7 @@ Bezpečnost našich projektů a ochrana dat uživatelů je naší nejvyšší pr
 Pokud objevíte bezpečnostní zranitelnost v jakémkoliv projektu organizace 21-000-000, postupujte prosím podle těchto kroků:
 
 1. **Neodhalujte zranitelnost veřejně** - Prosíme, nenahlašujte bezpečnostní problémy prostřednictvím veřejných GitHub issues.
-2. **Zašlete email** na adresu security@21-000-000.github.io s předmětem "BEZPEČNOSTNÍ ZRANITELNOST: [stručný popis]".
+2. **Zašlete email** na adresu security@21ooo.ooo s předmětem "BEZPEČNOSTNÍ ZRANITELNOST: [stručný popis]".
 3. **Uveďte detaily** - V emailu popište:
    - Typ zranitelnosti
    - Úplný popis problému
@@ -164,8 +164,8 @@ Při práci s našimi projekty prosím dodržujte následující bezpečnostní 
 
 Pro nahlášení bezpečnostních problémů použijte:
 
-- Email: security@21-000-000.github.io
-- PGP Klíč: [stáhnout z našeho keyserveru](https://keys.21-000-000.github.io/security.asc)
+- Email: security@21ooo.ooo
+- PGP Klíč: [stáhnout z našeho keyserveru](https://keys.21ooo.ooo/security.asc)
 - Otisky klíče: `1234 5678 9ABC DEF0 1234 5678 9ABC DEF0 1234 5678`
 
 Pro běžné problémy používejte standardní GitHub issues.
