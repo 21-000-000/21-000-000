@@ -1,0 +1,268 @@
+name: Sync Files
+
+on:
+  # Runs on changes in the .github directory of the main repository
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - '.github/**'
+  # Allows manual execution
+  workflow_dispatch:
+    inputs:
+      target_repos:
+        description: 'Target repositories (comma separated) or "all" for all repos'
+        required: false
+        default: 'all'
+        type: string
+      sync_mode:
+        description: 'Synchronization mode'
+        required: true
+        default: 'soft'
+        type: choice
+        options:
+          - soft     # Skips existing files that have been locally modified
+          - default  # Updates files but preserves local changes if .sync-config.json exists
+          - force    # Overwrites all files (except those in .sync-ignore)
+
+jobs:
+  prepare-targets:
+    name: Prepare list of target repositories
+    runs-on: ubuntu-latest
+    outputs:
+      target_repos: ${{ steps.set-targets.outputs.repos }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Get target repositories
+        id: set-targets
+        run: |
+          if [[ "${{ github.event.inputs.target_repos }}" == "all" || "${{ github.event.inputs.target_repos }}" == "" ]]; then
+            # Get list of all organization repositories, except the current one
+            REPOS=$(gh repo list 21-000-000 --json name -q '.[].name' | grep -v "21-000-000")
+
+            # Output as JSON array
+            REPOS_JSON=$(echo $REPOS | jq -R 'split(" ")')
+            echo "repos=$REPOS_JSON" >> $GITHUB_OUTPUT
+          else
+            # Convert comma-separated list to JSON array
+            REPOS=$(echo "${{ github.event.inputs.target_repos }}" | tr ',' ' ')
+            REPOS_JSON=$(echo $REPOS | jq -R 'split(" ")')
+            echo "repos=$REPOS_JSON" >> $GITHUB_OUTPUT
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+  sync-files:
+    name: Synchronize files
+    needs: prepare-targets
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repo: ${{ fromJson(needs.prepare-targets.outputs.target_repos) }}
+      fail-fast: false  # Continues even if synchronization of one repository fails
+
+    steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v3
+        with:
+          path: source-repo
+
+      - name: Checkout target repository
+        uses: actions/checkout@v3
+        with:
+          repository: 21-000-000/${{ matrix.repo }}
+          path: target-repo
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Create .sync-ignore if it doesn't exist
+        run: |
+          if [ ! -f "source-repo/.sync-ignore" ]; then
+            # Default files we never want to synchronize
+            cat > source-repo/.sync-ignore << EOF
+            .git/
+            .gitignore
+            README.md
+            LICENSE
+            CODEOWNERS
+            # Repository specific
+            .sync-ignore
+            .sync-config.json
+            EOF
+          fi
+
+      - name: Prepare sync configuration
+        run: |
+          # Check if configuration file exists in the target repository
+          SYNC_CONFIG="target-repo/.sync-config.json"
+          SYNC_MODE="${{ github.event.inputs.sync_mode || 'default' }}"
+
+          if [ ! -f "$SYNC_CONFIG" ]; then
+            # Create default configuration
+            echo '{
+              "mode": "default",
+              "files": {
+                ".github/workflows/": { "protected": false },
+                ".github/ISSUE_TEMPLATE/": { "protected": false },
+                ".github/SECURITY.md": { "protected": false },
+                ".github/CODE_OF_CONDUCT.md": { "protected": false },
+                ".github/CONTRIBUTING.md": { "protected": false },
+                ".github/PULL_REQUEST_TEMPLATE.md": { "protected": false },
+                ".github/dependabot.yml": { "protected": false }
+              }
+            }' > "$SYNC_CONFIG"
+          fi
+
+          # Choose synchronization mode
+          if [ "$SYNC_MODE" == "force" ]; then
+            # In force mode, overwrite configuration
+            python -c "
+import json
+with open('$SYNC_CONFIG', 'r') as f:
+    config = json.load(f)
+config['mode'] = 'force'
+for key in config['files']:
+    config['files'][key]['protected'] = False
+with open('$SYNC_CONFIG', 'w') as f:
+    json.dump(config, f, indent=2)
+            "
+          fi
+
+      - name: Synchronize files
+        id: sync
+        run: |
+          # Load configuration
+          SYNC_CONFIG="target-repo/.sync-config.json"
+          python -c "
+import json, os, shutil, re
+from pathlib import Path
+
+# Load configuration
+with open('$SYNC_CONFIG', 'r') as f:
+    config = json.load(f)
+
+# Load .sync-ignore
+ignore_patterns = []
+if os.path.exists('source-repo/.sync-ignore'):
+    with open('source-repo/.sync-ignore', 'r') as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith('#'):
+                ignore_patterns.append(re.compile(line.replace('*', '.*')))
+
+# Get list of files to copy
+files_to_copy = []
+for file_pattern, options in config['files'].items():
+    # Convert pattern to regex
+    pattern = file_pattern.replace('.', '\\.').replace('*', '.*')
+    is_protected = options.get('protected', False)
+
+    # Traverse source directory
+    for root, dirs, files in os.walk('source-repo'):
+        rel_path = os.path.relpath(root, 'source-repo')
+        if rel_path == '.':
+            rel_path = ''
+
+        # Filter by ignore patterns
+        should_ignore = False
+        for ignore in ignore_patterns:
+            if ignore.match(rel_path):
+                should_ignore = True
+                break
+        if should_ignore:
+            continue
+
+        # Process files
+        for file in files:
+            src_file_path = os.path.join(rel_path, file)
+            if any(ignore.match(src_file_path) for ignore in ignore_patterns):
+                continue
+
+            # Check if file matches pattern
+            if re.match(pattern, src_file_path):
+                # Add file to list
+                dst_file_path = os.path.join('target-repo', src_file_path)
+                # Check if exists in target and is protected
+                if os.path.exists(dst_file_path) and is_protected and config['mode'] != 'force':
+                    # Skip protected file
+                    print(f'Skipping protected file: {src_file_path}')
+                    continue
+
+                files_to_copy.append((
+                    os.path.join('source-repo', src_file_path),
+                    dst_file_path
+                ))
+
+# Copy files
+for src, dst in files_to_copy:
+    # Create directories if they don't exist
+    os.makedirs(os.path.dirname(dst), exist_ok=True)
+    # Copy file
+    shutil.copy2(src, dst)
+    print(f'Copied: {src} -> {dst}')
+
+# Return information about number of copied files
+with open(os.environ['GITHUB_OUTPUT'], 'a') as github_output:
+    github_output.write(f'copied_files={len(files_to_copy)}\n')
+          "
+
+      - name: Create Pull Request
+        if: steps.sync.outputs.copied_files != '0'
+        run: |
+          cd target-repo
+
+          # Create branch
+          BRANCH_NAME="sync-files-$(date +%Y%m%d%H%M%S)"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git checkout -b $BRANCH_NAME
+
+          # Commit changes
+          git add .
+          git commit -m "🔄 Synchronize files from 21-000-000" -m "Automatic file synchronization from the organization's main repository."
+          git push origin $BRANCH_NAME
+
+          # Create pull request
+          gh pr create \
+            --title "🔄 Synchronize files from 21-000-000" \
+            --body "This Pull Request contains automatically synchronized files from the organization's main repository. Please review changes before approving." \
+            --label "automated,maintenance" \
+            --repo "21-000-000/${{ matrix.repo }}"
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Notify if nothing to sync
+        if: steps.sync.outputs.copied_files == '0'
+        run: echo "No files were synchronized for ${{ matrix.repo }}. Everything is already up-to-date or excluded."
+
+  notify-completion:
+    name: Notify completion
+    needs: sync-files
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - name: Create job summary
+        run: |
+          echo "# 🔄 File Synchronization" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Synchronization has been completed for the following repositories:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          for repo in ${{ join(fromJson(needs.prepare-targets.outputs.target_repos), ' ') }}; do
+            echo "- [$repo](https://github.com/21-000-000/$repo)" >> $GITHUB_STEP_SUMMARY
+          done
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Synchronization mode: ${{ github.event.inputs.sync_mode || 'default' }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "A Pull Request was created for each repository, which must be manually reviewed and approved." >> $GITHUB_STEP_SUMMARY
+

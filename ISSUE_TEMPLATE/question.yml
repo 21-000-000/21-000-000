@@ -1,0 +1,112 @@
+name: ❓ Question / Otázka
+description: Ask a question or request help / Položit otázku nebo požádat o pomoc
+labels: ["question", "help wanted"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # 🇬🇧 Question
+        Have a question about using our projects? Need help with implementation? This is the right place!
+        
+        # 🇨🇿 Otázka
+        Máte otázku ohledně používání našich projektů? Potřebujete pomoc s implementací? Jste na správném místě!
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category / Kategorie
+      description: |
+        🇬🇧 What type of question is this?
+        🇨🇿 Jaký typ otázky to je?
+      options:
+        - General usage / Obecné použití
+        - Installation / Instalace
+        - Configuration / Konfigurace
+        - API/Integration / API/Integrace
+        - Bitcoin/Crypto specific / Bitcoin/Krypto specifické
+        - Security / Bezpečnost
+        - Performance / Výkon
+        - Documentation / Dokumentace
+        - Other / Jiné
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Question / Otázka
+      description: |
+        🇬🇧 What would you like to know? Be as specific as possible.
+        🇨🇿 Co byste chtěli vědět? Buďte co nejkonkrétnější.
+      placeholder: |
+        🇬🇧 Describe your question in detail...
+        🇨🇿 Popište svou otázku podrobně...
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context / Kontext
+      description: |
+        🇬🇧 What are you trying to accomplish? What have you already tried?
+        🇨🇿 Co se snažíte dosáhnout? Co jste už zkusili?
+      placeholder: |
+        🇬🇧 I'm trying to... I have already tried...
+        🇨🇿 Snažím se... Už jsem zkusil/a...
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: Version / Verze
+      description: |
+        🇬🇧 Which version are you using?
+        🇨🇿 Jakou verzi používáte?
+      placeholder: v1.0.0
+    validations:
+      required: false
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment / Prostředí
+      description: |
+        🇬🇧 What environment are you working in?
+        🇨🇿 V jakém prostředí pracujete?
+      options:
+        - Development / Vývoj
+        - Testing / Testování
+        - Production / Produkce
+        - Local setup / Lokální nastavení
+        - Bitcoin Testnet
+        - Bitcoin Mainnet
+        - Other / Jiné
+    validations:
+      required: false
+
+  - type: textarea
+    id: code-sample
+    attributes:
+      label: Code Sample / Ukázka kódu
+      description: |
+        🇬🇧 If relevant, please include any code snippets or configuration that relates to your question.
+        🇨🇿 Pokud je to relevantní, přiložte prosím jakékoliv úryvky kódu nebo konfiguraci související s vaší otázkou.
+      render: javascript
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information / Dodatečné informace
+      description: |
+        🇬🇧 Any other information that might be helpful?
+        🇨🇿 Jakékoliv další informace, které by mohly být užitečné?
+      placeholder: |
+        🇬🇧 Screenshots, logs, links to documentation you've read, etc.
+        🇨🇿 Snímky obrazovky, logy, odkazy na dokumentaci, kterou jste četli, atd.
+    validations:
+      required: false
+

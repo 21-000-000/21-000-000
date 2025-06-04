@@ -1,0 +1,209 @@
+name: 🚀 Performance Issue / Výkonnostní problém
+description: Report a performance issue or optimization request / Nahlásit výkonnostní problém nebo požádat o optimalizaci
+labels: ["performance", "optimization"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # 🇬🇧 Performance Issue
+        Found a performance bottleneck or have an idea for optimization? Let us know!
+        
+        # 🇨🇿 Výkonnostní problém
+        Našli jste výkonnostní problém nebo máte nápad na optimalizaci? Dejte nám vědět!
+
+  - type: dropdown
+    id: performance-type
+    attributes:
+      label: Performance Issue Type / Typ výkonnostního problému
+      description: |
+        🇬🇧 What type of performance issue is this?
+        🇨🇿 Jaký typ výkonnostního problému to je?
+      options:
+        - Slow response time / Pomalá odezva
+        - High memory usage / Vysoké využití paměti
+        - High CPU usage / Vysoké využití CPU
+        - Network bottleneck / Síťový problém
+        - Database performance / Výkon databáze
+        - Blockchain sync speed / Rychlost synchronizace blockchain
+        - Transaction processing / Zpracování transakcí
+        - UI/UX responsiveness / Odezva UI/UX
+        - Build/compilation time / Doba buildování/kompilace
+        - Other / Jiné
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: Problem Description / Popis problému
+      description: |
+        🇬🇧 Describe the performance issue in detail. What is slow? When does it happen?
+        🇨🇿 Popište výkonnostní problém podrobně. Co je pomalé? Kdy se to děje?
+      placeholder: |
+        🇬🇧 Detailed description of the performance issue...
+        🇨🇿 Podrobný popis výkonnostního problému...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-performance
+    attributes:
+      label: Expected Performance / Očekávaný výkon
+      description: |
+        🇬🇧 What performance level do you expect? Are there specific requirements?
+        🇨🇿 Jaký výkon očekáváte? Máte specifické požadavky?
+      placeholder: |
+        🇬🇧 Expected response time, throughput, resource usage, etc.
+        🇨🇿 Očekávaný čas odezvy, propustnost, využití prostředků, atd.
+    validations:
+      required: false
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to Reproduce / Kroky k reprodukci
+      description: |
+        🇬🇧 How can we reproduce this performance issue?
+        🇨🇿 Jak můžeme reprodukovat tento výkonnostní problém?
+      placeholder: |
+        🇬🇧 1. Start the application...
+        2. Navigate to...
+        3. Perform action...
+        4. Observe slow performance...
+        
+        🇨🇿 1. Spustit aplikaci...
+        2. Přejít na...
+        3. Provést akci...
+        4. Pozorovat pomalý výkon...
+    validations:
+      required: true
+
+  - type: textarea
+    id: performance-measurements
+    attributes:
+      label: Performance Measurements / Měření výkonu
+      description: |
+        🇬🇧 Please include any performance measurements you've taken (timing, memory usage, etc.)
+        🇨🇿 Uveďte prosím jakákoli měření výkonu, která jste provedli (časy, využití paměti, atd.)
+      placeholder: |
+        🇬🇧 Response time: 5000ms (expected <500ms)
+        Memory usage: 2GB (usually ~200MB)
+        CPU usage: 90% for 30 seconds
+        
+        🇨🇿 Čas odezvy: 5000ms (očekáváno <500ms)
+        Využití paměti: 2GB (obvykle ~200MB)
+        Využití CPU: 90% po dobu 30 sekund
+      render: shell
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: Version / Verze
+      description: |
+        🇬🇧 Which version are you using?
+        🇨🇿 Jakou verzi používáte?
+      placeholder: v1.0.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment / Prostředí
+      description: |
+        🇬🇧 In which environment did you observe the performance issue?
+        🇨🇿 V jakém prostředí jste pozorovali výkonnostní problém?
+      options:
+        - Production / Produkce
+        - Development / Vývoj
+        - Testing / Testování
+        - Staging
+        - Local / Lokální
+    validations:
+      required: true
+
+  - type: dropdown
+    id: system-specs
+    attributes:
+      label: System Specifications / Specifikace systému
+      description: |
+        🇬🇧 What are the system specifications where you observed the issue?
+        🇨🇿 Jaké jsou specifikace systému, kde jste pozorovali problém?
+      multiple: true
+      options:
+        - Low-end hardware / Slabý hardware
+        - Mid-range hardware / Střední hardware
+        - High-end hardware / Výkonný hardware
+        - Mobile device / Mobilní zařízení
+        - Server / Server
+        - Cloud instance / Cloudová instance
+        - Docker container / Docker kontejner
+        - Virtual machine / Virtuální stroj
+    validations:
+      required: false
+
+  - type: textarea
+    id: system-details
+    attributes:
+      label: System Details / Detaily systému
+      description: |
+        🇬🇧 Please provide specific system details (OS, RAM, CPU, etc.)
+        🇨🇿 Uveďte prosím specifické detaily systému (OS, RAM, CPU, atd.)
+      placeholder: |
+        🇬🇧 OS: Ubuntu 20.04
+        RAM: 8GB
+        CPU: Intel i7-8750H
+        Storage: SSD
+        Network: 100Mbps
+        
+        🇨🇿 OS: Ubuntu 20.04
+        RAM: 8GB
+        CPU: Intel i7-8750H
+        Úložiště: SSD
+        Síť: 100Mbps
+    validations:
+      required: false
+
+  - type: textarea
+    id: optimization-ideas
+    attributes:
+      label: Optimization Ideas / Nápady na optimalizaci
+      description: |
+        🇬🇧 Do you have any ideas for improving performance?
+        🇨🇿 Máte nějaké nápady na zlepšení výkonu?
+      placeholder: |
+        🇬🇧 Possible optimizations, caching strategies, algorithm improvements, etc.
+        🇨🇿 Možné optimalizace, strategie cachování, vylepšení algoritmů, atd.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority / Priorita
+      description: |
+        🇬🇧 How critical is this performance issue?
+        🇨🇿 Jak kritický je tento výkonnostní problém?
+      options:
+        - Critical - blocking users / Kritický - blokuje uživatele
+        - High - significantly impacts UX / Vysoká - významně ovlivňuje UX
+        - Medium - noticeable but workable / Střední - znatelné, ale použitelné
+        - Low - minor improvement / Nízká - drobné vylepšení
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context / Další kontext
+      description: |
+        🇬🇧 Any additional information that might help us understand and fix the performance issue.
+        🇨🇿 Jakékoliv další informace, které nám mohou pomoci pochopit a vyřešit výkonnostní problém.
+      placeholder: |
+        🇬🇧 Logs, screenshots, profiles, related issues, etc.
+        🇨🇿 Logy, screenshoty, profily, související problémy, atd.
+    validations:
+      required: false
+

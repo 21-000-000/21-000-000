@@ -1,0 +1,138 @@
+name: 🔒 Security Report / Bezpečnostní problém
+description: Report a security issue or vulnerability / Nahlásit bezpečnostní problém nebo zranitelnost
+labels: ["security", "confidential"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # 🇬🇧 Security Report
+        **IMPORTANT**: If you have discovered a critical security vulnerability that could lead to compromised user data or finances,
+        **DO NOT OPEN A PUBLIC ISSUE**. Instead, please contact us directly at the email address listed in the SECURITY.md file.
+
+        If this is not a critical vulnerability, you can use this form.
+
+        # 🇨🇿 Bezpečnostní hlášení
+        **DŮLEŽITÉ**: Pokud jste objevili kritickou bezpečnostní zranitelnost, která by mohla vést k ohrožení uživatelských údajů nebo financí,
+        **NEOTVÍREJTE VEŘEJNÝ ISSUE**. Místo toho, prosím, kontaktujte nás přímo na email uvedený v souboru SECURITY.md.
+
+        Pokud se nejedná o kritickou zranitelnost, můžete použít tento formulář.
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity / Závažnost
+      description: |
+        🇬🇧 How severe is this security issue?
+        🇨🇿 Jak závažný je tento bezpečnostní problém?
+      options:
+        - Critical (immediate user danger) / Kritická (okamžité ohrožení uživatelů)
+        - High (significant risk) / Vysoká (významné riziko)
+        - Medium (limited risk) / Střední (omezené riziko)
+        - Low (minimal risk) / Nízká (minimální riziko)
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Vulnerability Description / Popis zranitelnosti
+      description: |
+        🇬🇧 Detailed description of the security issue. Be as specific as possible.
+        🇨🇿 Detailní popis bezpečnostního problému. Buďte co nejkonkrétnější.
+      placeholder: |
+        🇬🇧 Describe the vulnerability, including how it could be exploited.
+        🇨🇿 Popište zranitelnost, včetně toho, jak by mohla být zneužita.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce / Kroky k reprodukci
+      description: |
+        🇬🇧 How can this vulnerability be reproduced?
+        🇨🇿 Jak lze tuto zranitelnost reprodukovat?
+      placeholder: |
+        🇬🇧 Provide detailed steps to reproduce:
+        1. ...
+        2. ...
+        3. ...
+
+        🇨🇿 Uveďte detailní kroky k reprodukci:
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Potential Impact / Potenciální dopad
+      description: |
+        🇬🇧 What is the potential impact of this vulnerability? What information could be compromised or what damage could occur?
+        🇨🇿 Jaký je potenciální dopad této zranitelnosti? Jaké informace by mohly být ohroženy nebo jaké škody by mohly nastat?
+      placeholder: |
+        🇬🇧 Describe the impact, e.g., an attacker could gain access to..., steal..., modify...
+        🇨🇿 Popište dopad, např. útočník by mohl získat přístup k..., odcizit..., změnit...
+    validations:
+      required: true
+
+  - type: textarea
+    id: mitigation
+    attributes:
+      label: Suggested Mitigation / Navrhované zmírnění
+      description: |
+        🇬🇧 If you have suggestions for mitigating or fixing this vulnerability, please provide them here.
+        🇨🇿 Máte-li návrhy na zmírnění nebo opravu této zranitelnosti, uveďte je zde.
+      placeholder: |
+        🇬🇧 Possible ways to address the issue...
+        🇨🇿 Možné způsoby řešení problému...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: affected-components
+    attributes:
+      label: Affected Components / Postižené komponenty
+      description: |
+        🇬🇧 Which components are affected by this vulnerability?
+        🇨🇿 Které komponenty jsou postiženy touto zranitelností?
+      multiple: true
+      options:
+        - Frontend
+        - Backend API
+        - Databáze / Database
+        - Autentizace / Authentication
+        - Wallet / Kryptoměnová peněženka
+        - Smart Contract
+        - Blockchain interakce / Blockchain Interaction
+        - Síťová komunikace / Network Communication
+        - Jiné (upřesněte v popisu) / Other (specify in description)
+    validations:
+      required: true
+
+  - type: input
+    id: versions
+    attributes:
+      label: Affected Versions / Postižené verze
+      description: |
+        🇬🇧 Which versions of the software are affected?
+        🇨🇿 Které verze softwaru jsou postiženy?
+      placeholder: v1.0.0, v1.1.0, atd./etc.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information / Dodatečné informace
+      description: |
+        🇬🇧 Any additional information you consider important for this security issue.
+        🇨🇿 Jakékoliv další informace, které považujete za důležité pro tento bezpečnostní problém.
+      placeholder: |
+        🇬🇧 E.g., links to similar vulnerabilities, CVE references, suggestions for further testing...
+        🇨🇿 Např. odkazy na podobné zranitelnosti, CVE reference, návrhy na další testování...
+    validations:
+      required: false
+
