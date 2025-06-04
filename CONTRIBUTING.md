@@ -72,7 +72,11 @@ Thank you for your interest in contributing to 21-000-000 organization projects!
 ### General Coding Standards
 
 - Follow stylistic conventions for the respective language
-- Use consistent indentation and formatting
+  - JavaScript/TypeScript: [Prettier](https://prettier.io/) + [ESLint](https://eslint.org/)
+  - Python: [Black](https://black.readthedocs.io/) + [PEP 8](https://pep8.org/)
+  - Rust: [rustfmt](https://github.com/rust-lang/rustfmt) + [Clippy](https://github.com/rust-lang/rust-clippy)
+  - Go: [gofmt](https://golang.org/cmd/gofmt/) + [golint](https://github.com/golang/lint)
+- Use consistent indentation and formatting (automated via CI/CD)
 - Name variables, functions, and classes descriptively and meaningfully
 - Avoid overly long functions (max 50 lines as a guideline)
 - Keep files focused on a single responsibility
@@ -217,7 +221,11 @@ Děkujeme za váš zájem přispět do projektů organizace 21-000-000! Tento do
 ### Obecné standardy kódování
 
 - Dodržujte stylistické konvence pro příslušný jazyk
-- Používejte konzistentní odsazování a formátování
+  - JavaScript/TypeScript: [Prettier](https://prettier.io/) + [ESLint](https://eslint.org/)
+  - Python: [Black](https://black.readthedocs.io/) + [PEP 8](https://pep8.org/)
+  - Rust: [rustfmt](https://github.com/rust-lang/rustfmt) + [Clippy](https://github.com/rust-lang/rust-clippy)
+  - Go: [gofmt](https://golang.org/cmd/gofmt/) + [golint](https://github.com/golang/lint)
+- Používejte konzistentní odsazování a formátování (automatizováno přes CI/CD)
 - Pojmenovávejte proměnné, funkce a třídy popisně a smysluplně
 - Vyhněte se příliš dlouhým funkcím (max. 50 řádků jako vodítko)
 - Držte soubory zaměřené na jednu odpovědnost

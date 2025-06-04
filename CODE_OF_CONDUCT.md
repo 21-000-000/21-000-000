@@ -61,7 +61,8 @@ For severe violations, we may proceed directly to a permanent ban.
 For reporting code of conduct issues, contact:
 
 * Email: conduct@21-000-000.github.io
-* Community moderators: @moderator1, @moderator2 (on GitHub, Discord, Telegram)
+* Community moderators: Available on request via the email above
+* Alternatively, report directly to project maintainers through GitHub DM
 
 ## Emphasis on Transparency and Security
 
@@ -142,7 +143,8 @@ V závažných případech můžeme přistoupit rovnou k trvalému zákazu.
 Pro nahlášení problémů s kodexem chování kontaktujte:
 
 * Email: conduct@21-000-000.github.io
-* Moderátoři komunity: @moderator1, @moderator2 (na GitHub, Discord, Telegram)
+* Moderátoři komunity: K dispozici na vyžádání prostřednictvím výše uvedeného emailu
+* Alternativně můžete nahlásit přímo správcům projektu prostřednictvím GitHub DM
 
 ## Důraz na transparentnost a bezpečnost
 
