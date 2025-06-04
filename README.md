@@ -1,65 +1,133 @@
 <div align="center">
 
-  # Repository for GitHub specific files and configurations
+  # 21.000.000 - Bitcoin Community & Tools
 
-  <p><a href="#-about-this-repository">🇬🇧 English</a> | <a href="#-o-tomto-repozitáři">🇨🇿 Česky</a></p>
+  <p><a href="#-about-us">🇬🇧 English</a> | <a href="#-o-nás">🇨🇿 Česky</a></p>
 </div>
 
 ---
 
-# 🇬🇧 About this Repository
+# 🇬🇧 About Us
 
-This repository contains special files and GitHub settings for the 21.000.000 organization/project. The `.github` repository serves as a central place for storing default files that are used across all repositories in this organization.
+**21.000.000** represents the maximum number of Bitcoin that will ever exist. We are an open Czech community of developers, educators, and Bitcoin enthusiasts who believe in:
 
-## Contents
+- 🔓 **Financial freedom** through Bitcoin adoption
+- 📚 **Education** about Bitcoin technology and principles  
+- 🛠️ **Open source development** of Bitcoin tools and applications
+- 🇨🇿 **Czech localization** of Bitcoin resources and education
+- 🔒 **Security** and privacy in cryptocurrency usage
 
-- **ISSUE_TEMPLATES** - Templates for creating new issues
-- **PULL_REQUEST_TEMPLATE** - Templates for pull requests
-- **workflows** - GitHub Actions workflow files
-- **CODE_OF_CONDUCT.md** - Community code of conduct rules
-- **CONTRIBUTING.md** - Guidelines for contributors
-- **SECURITY.md** - Security policies and procedures for reporting vulnerabilities
-<!-- - **FUNDING.yml** - Information about project funding options -->
+## 🚀 Quick Start
 
-## How to Use
+- 📋 [View our projects](https://github.com/orgs/21-000-000/repositories)
+- 🐛 [Report issues](https://github.com/21-000-000/21-000-000/issues)
+- 💬 [Join discussions](https://github.com/orgs/21-000-000/discussions)
+- 🤝 [Contributing guidelines](.github/CONTRIBUTING.md)
+- 📖 [Documentation wiki](https://github.com/21-000-000/21-000-000/wiki)
+- 🔒 [Security policy](.github/SECURITY.md)
 
-Files in this repository are automatically applied to all other repositories within the organization, unless those repositories have their own versions of these files.
+## 🏗️ Our Projects
 
-## Contributing
+### Active Projects
+- [awesome-btc-cz](https://github.com/21-000-000/awesome-btc-cz) - Curated Czech Bitcoin resources
+- [awesome-btc-global](https://github.com/21-000-000/awesome-btc-global) - Global Bitcoin resources collection
+- [21-000-000.github.io](https://github.com/21-000-000/21-000-000.github.io) - Official community website
 
-If you want to contribute to improving these templates and workflows, create a pull request with your proposed changes.
+### Development Tools
+- [dotfiles](https://github.com/21-000-000/dotfiles) - Shared development configurations
 
-## License
+## 🤝 How to Contribute
 
-The content of this repository is licensed under the [MIT License](LICENSE).
+We welcome contributions from developers, educators, translators, and Bitcoin enthusiasts!
+
+### Ways to contribute:
+1. **Code contributions** - Check [open issues](https://github.com/21-000-000/21-000-000/issues)
+2. **Documentation** - Help improve our guides and tutorials
+3. **Translation** - Localize content to Czech or other languages
+4. **Community** - Share knowledge and help others
+5. **Testing** - Try our tools and report bugs
+
+### Before contributing:
+- Read our [Code of Conduct](.github/CODE_OF_CONDUCT.md)
+- Review [Contributing Guidelines](.github/CONTRIBUTING.md)
+- Check our [Security Policy](.github/SECURITY.md)
+
+## 📞 Contact & Community
+
+- **Issues**: [GitHub Issues](https://github.com/21-000-000/21-000-000/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/orgs/21-000-000/discussions)
+- **Email**: `community@21ooo.ooo`
+- **Security**: `security@21ooo.ooo`
+
+## 📁 Repository Structure
+
+This main repository contains:
+- 📖 Community documentation and guidelines in `.github/`
+- 🔧 GitHub templates for issues and pull requests
+- ⚙️ GitHub Actions workflows
+- 🏠 Organization profile content
 
 ---
 
-# 🇨🇿 O tomto repozitáři
+# 🇨🇿 O nás
 
-Tento repozitář obsahuje speciální soubory a nastavení GitHub pro organizaci/projekt 21.000.000. Repozitář `.github` slouží jako centrální místo pro ukládání výchozích souborů, které se používají napříč všemi repozitáři v této organizaci.
+**21.000.000** představuje maximální počet Bitcoinů, které kdy budou existovat. Jsme otevřená česká komunita vývojářů, edukátorů a Bitcoin nadšenců, kteří věří v:
 
-## Obsah
+- 🔓 **Finanční svobodu** prostřednictvím adopce Bitcoinu
+- 📚 **Vzdělávání** o Bitcoin technologii a principech
+- 🛠️ **Open source vývoj** Bitcoin nástrojů a aplikací
+- 🇨🇿 **Českou lokalizaci** Bitcoin zdrojů a vzdělávání
+- 🔒 **Bezpečnost** a soukromí při používání kryptoměn
 
-- **ISSUE_TEMPLATES** - Šablony pro vytváření nových issues
-- **PULL_REQUEST_TEMPLATE** - Šablony pro pull requesty
-- **workflows** - GitHub Actions workflow soubory
-- **CODE_OF_CONDUCT.md** - Pravidla chování v komunitě
-- **CONTRIBUTING.md** - Pokyny pro přispěvatele
-- **SECURITY.md** - Bezpečnostní zásady a postupy pro hlášení zranitelností
-<!-- - **FUNDING.yml** - Informace o možnostech financování projektu -->
+## 🚀 Rychlý start
 
-## Jak používat
+- 📋 [Zobrazit naše projekty](https://github.com/orgs/21-000-000/repositories)
+- 🐛 [Nahlásit problémy](https://github.com/21-000-000/21-000-000/issues)
+- 💬 [Připojit se k diskuzím](https://github.com/orgs/21-000-000/discussions)
+- 🤝 [Pokyny pro přispěvatele](.github/CONTRIBUTING.md)
+- 📖 [Wiki dokumentace](https://github.com/21-000-000/21-000-000/wiki)
+- 🔒 [Bezpečnostní politika](.github/SECURITY.md)
 
-Soubory v tomto repozitáři jsou automaticky aplikovány na všechny ostatní repozitáře v rámci organizace, pokud tyto repozitáře nemají své vlastní verze těchto souborů.
+## 🏗️ Naše projekty
 
-## Přispívání
+### Aktivní projekty
+- [awesome-btc-cz](https://github.com/21-000-000/awesome-btc-cz) - Kurátorované české Bitcoin zdroje
+- [awesome-btc-global](https://github.com/21-000-000/awesome-btc-global) - Kolekce globálních Bitcoin zdrojů
+- [21-000-000.github.io](https://github.com/21-000-000/21-000-000.github.io) - Oficiální komunitní webstránky
 
-Pokud chcete přispět k vylepšení těchto šablon a workflow, vytvořte pull request s vašimi navrhovanými změnami.
+### Vývojářské nástroje
+- [dotfiles](https://github.com/21-000-000/dotfiles) - Sdílené vývojářské konfigurace
 
-## Licence
+## 🤝 Jak přispět
 
-Obsah tohoto repozitáře je licencován pod [MIT licencí](LICENSE).
+Vítáme příspěvky od vývojářů, edukátorů, překladatelů a Bitcoin nadšenců!
+
+### Způsoby přispění:
+1. **Kódové příspěvky** - Podívejte se na [otevřené issues](https://github.com/21-000-000/21-000-000/issues)
+2. **Dokumentace** - Pomozte zlepšit naše návody a tutoriály
+3. **Překlady** - Lokalizujte obsah do češtiny nebo jiných jazyků
+4. **Komunita** - Sdílejte znalosti a pomáhejte ostatním
+5. **Testování** - Vyzkoušejte naše nástroje a hlaste chyby
+
+### Před přispíváním:
+- Přečtěte si náš [Kodex chování](.github/CODE_OF_CONDUCT.md)
+- Projděte si [Pokyny pro přispěvatele](.github/CONTRIBUTING.md)
+- Zkontrolujte naši [Bezpečnostní politiku](.github/SECURITY.md)
+
+## 📞 Kontakt & komunita
+
+- **Issues**: [GitHub Issues](https://github.com/21-000-000/21-000-000/issues)
+- **Diskuze**: [GitHub Discussions](https://github.com/orgs/21-000-000/discussions)
+- **Email**: `community@21ooo.ooo`
+- **Bezpečnost**: `security@21ooo.ooo`
+
+## 📁 Struktura repozitáře
+
+Tento hlavní repozitář obsahuje:
+- 📖 Komunitní dokumentaci a pokyny v `.github/`
+- 🔧 GitHub šablony pro issues a pull requesty
+- ⚙️ GitHub Actions workflows
+- 🏠 Obsah organizačního profilu
 
 ---
 

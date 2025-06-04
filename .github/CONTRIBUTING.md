@@ -49,7 +49,7 @@ Thank you for your interest in contributing to 21.000.000 organization projects!
 ### Creating Pull Requests
 
 - One PR should address one specific change or feature
-- Use the provided [pull request template](../.github/PULL_REQUEST_TEMPLATE.md)
+- Use the provided [pull request template](.github/PULL_REQUEST_TEMPLATE.md)
 - Ensure the PR meets all the checklist items
 - Link the PR to the relevant issue (use keywords like "Fixes #123" or "Closes #456")
 - For larger changes, consider creating a [draft pull request](https://github.blog/2019-02-14-introducing-draft-pull-requests/) for early feedback
@@ -198,7 +198,7 @@ Děkujeme za váš zájem přispět do projektů organizace 21.000.000! Tento do
 ### Vytváření Pull Requestů
 
 - Jeden PR by měl řešit jednu konkrétní změnu nebo funkci
-- Používejte poskytnutou [šablonu pull requestu](../.github/PULL_REQUEST_TEMPLATE.md)
+- Používejte poskytnutou [šablonu pull requestu](.github/PULL_REQUEST_TEMPLATE.md)
 - Ujistěte se, že PR splňuje všechny body v checklistu
 - Propojte PR s příslušným issue (použijte klíčová slova jako "Fixes #123" nebo "Closes #456")
 - Pro větší změny zvažte vytvoření [draft pull requestu](https://github.blog/2019-02-14-introducing-draft-pull-requests/) pro časnou zpětnou vazbu
