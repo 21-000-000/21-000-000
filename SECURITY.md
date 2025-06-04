@@ -1,90 +1,3 @@
-# 🇨🇿 Bezpečnostní politika
-
-## Nahlašování bezpečnostních zranitelností
-
-Bezpečnost našich projektů a ochrana dat uživatelů je naší nejvyšší prioritou. Oceňujeme pomoc bezpečnostní komunity při odhalování potenciálních zranitelností.
-
-### Proces zodpovědného nahlašování (Responsible Disclosure)
-
-Pokud objevíte bezpečnostní zranitelnost v jakémkoliv projektu organizace 21-000-000, postupujte prosím podle těchto kroků:
-
-1. **Neodhalujte zranitelnost veřejně** - Prosíme, nenahlašujte bezpečnostní problémy prostřednictvím veřejných GitHub issues.
-2. **Zašlete email** na adresu security@21-000-000.github.io s předmětem "BEZPEČNOSTNÍ ZRANITELNOST: [stručný popis]".
-3. **Uveďte detaily** - V emailu popište:
-   - Typ zranitelnosti
-   - Úplný popis problému
-   - Kroky k reprodukci nebo proof-of-concept
-   - Potenciální dopad
-   - Případné návrhy na zmírnění nebo opravu
-
-Zavazujeme se k následujícímu postupu:
-
-- Potvrdíme přijetí vašeho hlášení do 48 hodin
-- Poskytneme odhad, kdy očekáváme vydání opravy
-- Budeme vás informovat o postupu řešení
-- Uvedeme vás v seznamu poděkování (pokud si to přejete)
-
-### Časový rámec zveřejnění
-
-Naše politika zveřejnění je následující:
-
-1. Potvrzení přijetí hlášení do 48 hodin
-2. Prvotní posouzení závažnosti a dopadu do 7 dnů
-3. Cílový čas pro opravu kritických zranitelností je 30 dní nebo méně
-4. Veřejné zveřejnění po vydání opravy, obvykle s 14denním odstupem, aby uživatelé měli čas na aktualizaci
-
-## Bezpečnostní best practices pro Bitcoin/krypto projekty
-
-Při práci s našimi projekty prosím dodržujte následující bezpečnostní zásady:
-
-### Ochrana privátních klíčů a citlivých dat
-
-- **Nikdy nevkládejte privátní klíče nebo seed fráze do kódu** - Ani do komentářů, proměnných, konfiguračních souborů nebo jiných míst v kódu
-- **Neukládejte citlivé údaje v git repozitářích** - Používejte .gitignore a vyhněte se ukládání .env souborů nebo jiných konfiguračních souborů obsahujících tajné údaje
-- **Používejte environment proměnné** - Pro ukládání citlivých údajů v produkčním prostředí
-- **Implementujte vhodné šifrování** - Pro ukládání jakýchkoli citlivých dat, která musí být uchována
-
-### Vývoj a testování
-
-- **Používejte testovací sítě** - Vždy vyvíjejte a testujte na testovacích sítích (testnet, signet) než přejdete na hlavní síť (mainnet)
-- **Oddělte testovací a produkční prostředí** - Nikdy nemíchejte testovací a produkční data nebo konfigurace
-- **Provádějte bezpečnostní audity** - Před nasazením kritických funkcí týkajících se správy prostředků
-
-### Práce s transakcemi a blockchain daty
-
-- **Implementujte důkladnou validaci vstupu** - Zvláště při práci s adresami, transakcemi a jinými blockchain daty
-- **Ověřujte transakce několikrát** - Zajistěte vícenásobné kontroly před podepsáním nebo odesláním transakcí
-- **Implementujte rate limiting** - Pro citlivé operace, které by mohly být zneužity
-- **Mějte plán na recovery** - Pro případ kompromitace klíčů nebo jiných bezpečnostních incidentů
-
-## Podporované verze a politika aktualizací
-
-### Podporované verze
-
-| Verze | Podporována | Poznámky |
-| ----- | ----------- | -------- |
-| 1.x   | ✅          | Plná podpora |
-| 0.x   | ⚠️          | Pouze kritické bezpečnostní opravy |
-
-### Politika bezpečnostních aktualizací
-
-- Kritické bezpečnostní aktualizace jsou vydávány co nejdříve po identifikaci problému
-- Bezpečnostní aktualizace jsou jasně označeny v release notes
-- Po vydání bezpečnostní aktualizace doporučujeme aktualizovat co nejdříve
-- Pro starší verze můžeme poskytnout backportované opravy pro kritické zranitelnosti
-
-## Kontaktní informace
-
-Pro nahlášení bezpečnostních problémů použijte:
-
-- Email: security@21-000-000.github.io
-- PGP Klíč: [stáhnout z našeho keyserveru](https://keys.21-000-000.github.io/security.asc)
-- Otisky klíče: `1234 5678 9ABC DEF0 1234 5678 9ABC DEF0 1234 5678`
-
-Pro běžné problémy používejte standardní GitHub issues.
-
----
-
 # 🇬🇧 Security Policy
 
 ## Reporting Security Vulnerabilities
@@ -170,3 +83,89 @@ For reporting security issues, use:
 
 For regular issues, please use standard GitHub issues.
 
+---
+
+# 🇨🇿 Bezpečnostní politika
+
+## Nahlašování bezpečnostních zranitelností
+
+Bezpečnost našich projektů a ochrana dat uživatelů je naší nejvyšší prioritou. Oceňujeme pomoc bezpečnostní komunity při odhalování potenciálních zranitelností.
+
+### Proces zodpovědného nahlašování (Responsible Disclosure)
+
+Pokud objevíte bezpečnostní zranitelnost v jakémkoliv projektu organizace 21-000-000, postupujte prosím podle těchto kroků:
+
+1. **Neodhalujte zranitelnost veřejně** - Prosíme, nenahlašujte bezpečnostní problémy prostřednictvím veřejných GitHub issues.
+2. **Zašlete email** na adresu security@21-000-000.github.io s předmětem "BEZPEČNOSTNÍ ZRANITELNOST: [stručný popis]".
+3. **Uveďte detaily** - V emailu popište:
+   - Typ zranitelnosti
+   - Úplný popis problému
+   - Kroky k reprodukci nebo proof-of-concept
+   - Potenciální dopad
+   - Případné návrhy na zmírnění nebo opravu
+
+Zavazujeme se k následujícímu postupu:
+
+- Potvrdíme přijetí vašeho hlášení do 48 hodin
+- Poskytneme odhad, kdy očekáváme vydání opravy
+- Budeme vás informovat o postupu řešení
+- Uvedeme vás v seznamu poděkování (pokud si to přejete)
+
+### Časový rámec zveřejnění
+
+Naše politika zveřejnění je následující:
+
+1. Potvrzení přijetí hlášení do 48 hodin
+2. Prvotní posouzení závažnosti a dopadu do 7 dnů
+3. Cílový čas pro opravu kritických zranitelností je 30 dní nebo méně
+4. Veřejné zveřejnění po vydání opravy, obvykle s 14denním odstupem, aby uživatelé měli čas na aktualizaci
+
+## Bezpečnostní best practices pro Bitcoin/krypto projekty
+
+Při práci s našimi projekty prosím dodržujte následující bezpečnostní zásady:
+
+### Ochrana privátních klíčů a citlivých dat
+
+- **Nikdy nevkládejte privátní klíče nebo seed fráze do kódu** - Ani do komentářů, proměnných, konfiguračních souborů nebo jiných míst v kódu
+- **Neukládejte citlivé údaje v git repozitářích** - Používejte .gitignore a vyhněte se ukládání .env souborů nebo jiných konfiguračních souborů obsahujících tajné údaje
+- **Používejte environment proměnné** - Pro ukládání citlivých údajů v produkčním prostředí
+- **Implementujte vhodné šifrování** - Pro ukládání jakýchkoli citlivých dat, která musí být uchována
+
+### Vývoj a testování
+
+- **Používejte testovací sítě** - Vždy vyvíjejte a testujte na testovacích sítích (testnet, signet) než přejdete na hlavní síť (mainnet)
+- **Oddělte testovací a produkční prostředí** - Nikdy nemíchejte testovací a produkční data nebo konfigurace
+- **Provádějte bezpečnostní audity** - Před nasazením kritických funkcí týkajících se správy prostředků
+
+### Práce s transakcemi a blockchain daty
+
+- **Implementujte důkladnou validaci vstupu** - Zvláště při práci s adresami, transakcemi a jinými blockchain daty
+- **Ověřujte transakce několikrát** - Zajistěte vícenásobné kontroly před podepsáním nebo odesláním transakcí
+- **Implementujte rate limiting** - Pro citlivé operace, které by mohly být zneužity
+- **Mějte plán na recovery** - Pro případ kompromitace klíčů nebo jiných bezpečnostních incidentů
+
+## Podporované verze a politika aktualizací
+
+### Podporované verze
+
+| Verze | Podporována | Poznámky |
+| ----- | ----------- | -------- |
+| 1.x   | ✅          | Plná podpora |
+| 0.x   | ⚠️          | Pouze kritické bezpečnostní opravy |
+
+### Politika bezpečnostních aktualizací
+
+- Kritické bezpečnostní aktualizace jsou vydávány co nejdříve po identifikaci problému
+- Bezpečnostní aktualizace jsou jasně označeny v release notes
+- Po vydání bezpečnostní aktualizace doporučujeme aktualizovat co nejdříve
+- Pro starší verze můžeme poskytnout backportované opravy pro kritické zranitelnosti
+
+## Kontaktní informace
+
+Pro nahlášení bezpečnostních problémů použijte:
+
+- Email: security@21-000-000.github.io
+- PGP Klíč: [stáhnout z našeho keyserveru](https://keys.21-000-000.github.io/security.asc)
+- Otisky klíče: `1234 5678 9ABC DEF0 1234 5678 9ABC DEF0 1234 5678`
+
+Pro běžné problémy používejte standardní GitHub issues.

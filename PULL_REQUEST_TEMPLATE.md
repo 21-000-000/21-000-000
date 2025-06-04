@@ -1,54 +1,3 @@
-# 🇨🇿 Pull Request
-
-## Popis změn
-<!-- Popište změny, které jste provedli, a vysvětlete, proč jsou potřebné -->
-
-## Typ změn
-<!-- Označte jednu nebo více možností změnou [ ] na [x] -->
-
-- [ ] 🐛 Oprava chyby (bug fix)
-- [ ] ✨ Nová funkce (feature)
-- [ ] 📚 Aktualizace dokumentace (documentation)
-- [ ] 🎨 Formátování kódu/styly (styling)
-- [ ] ♻️ Refaktoring kódu (bez změny funkcionality)
-- [ ] 🧪 Přidání nebo aktualizace testů
-- [ ] 🔒 Bezpečnostní vylepšení
-- [ ] 🚀 Výkonnostní vylepšení
-- [ ] 🔄 CI/CD změny
-- [ ] 📦 Změny závislostí
-- [ ] 🔧 Konfigurační změny
-- [ ] 🌐 Lokalizační změny
-
-## Checklist pro review
-<!-- Označte, co jste zkontrolovali a splnili -->
-
-- [ ] Kód splňuje stylistické požadavky projektu
-- [ ] Byly přidány komentáře na složitých místech
-- [ ] Aktualizoval/a jsem dokumentaci
-- [ ] Přidal/a jsem testy pokrývající novou/změněnou funkcionalitu
-- [ ] Všechny testy prochází
-- [ ] Zkontroloval/a jsem možné bezpečnostní dopady
-- [ ] Nevystavil/a jsem žádné citlivé údaje nebo klíče
-- [ ] Změny jsou kompatibilní se staršími verzemi (pokud je to relevantní)
-
-## Testovací instrukce
-<!-- Popište, jak lze vaše změny otestovat -->
-
-## Bezpečnostní úvahy (Bitcoin/Krypto)
-<!-- Vyplňte tuto sekci, pokud vaše změny mají bezpečnostní důsledky -->
-
-### Ověřte, že změny:
-- [ ] Neobsahují hardcoded privátní klíče nebo jiné citlivé údaje
-- [ ] Nezvyšují riziko útoku na prostředky uživatelů
-- [ ] Neovlivňují kryptografické operace způsobem, který by mohl oslabit bezpečnost
-- [ ] Nepřidávají závislosti s potenciálními bezpečnostními riziky
-- [ ] Jsou odolné proti známým Bitcoin/krypto-specifickým útokům
-
-### Poznámky k bezpečnosti:
-<!-- Popište jakékoli bezpečnostní úvahy, kterých by si recenzenti měli být vědomi -->
-
----
-
 # 🇬🇧 Pull Request
 
 ## Description of Changes
@@ -98,3 +47,53 @@
 ### Security Notes:
 <!-- Describe any security considerations reviewers should be aware of -->
 
+---
+
+# 🇨🇿 Pull Request
+
+## Popis změn
+<!-- Popište změny, které jste provedli, a vysvětlete, proč jsou potřebné -->
+
+## Typ změn
+<!-- Označte jednu nebo více možností změnou [ ] na [x] -->
+
+- [ ] 🐛 Oprava chyby (bug fix)
+- [ ] ✨ Nová funkce (feature)
+- [ ] 📚 Aktualizace dokumentace (documentation)
+- [ ] 🎨 Formátování kódu/styly (styling)
+- [ ] ♻️ Refaktoring kódu (bez změny funkcionality)
+- [ ] 🧪 Přidání nebo aktualizace testů
+- [ ] 🔒 Bezpečnostní vylepšení
+- [ ] 🚀 Výkonnostní vylepšení
+- [ ] 🔄 CI/CD změny
+- [ ] 📦 Změny závislostí
+- [ ] 🔧 Konfigurační změny
+- [ ] 🌐 Lokalizační změny
+
+## Checklist pro review
+<!-- Označte, co jste zkontrolovali a splnili -->
+
+- [ ] Kód splňuje stylistické požadavky projektu
+- [ ] Byly přidány komentáře na složitých místech
+- [ ] Aktualizoval/a jsem dokumentaci
+- [ ] Přidal/a jsem testy pokrývající novou/změněnou funkcionalitu
+- [ ] Všechny testy prochází
+- [ ] Zkontroloval/a jsem možné bezpečnostní dopady
+- [ ] Nevystavil/a jsem žádné citlivé údaje nebo klíče
+- [ ] Změny jsou kompatibilní se staršími verzemi (pokud je to relevantní)
+
+## Testovací instrukce
+<!-- Popište, jak lze vaše změny otestovat -->
+
+## Bezpečnostní úvahy (Bitcoin/Krypto)
+<!-- Vyplňte tuto sekci, pokud vaše změny mají bezpečnostní důsledky -->
+
+### Ověřte, že změny:
+- [ ] Neobsahují hardcoded privátní klíče nebo jiné citlivé údaje
+- [ ] Nezvyšují riziko útoku na prostředky uživatelů
+- [ ] Neovlivňují kryptografické operace způsobem, který by mohl oslabit bezpečnost
+- [ ] Nepřidávají závislosti s potenciálními bezpečnostními riziky
+- [ ] Jsou odolné proti známým Bitcoin/krypto-specifickým útokům
+
+### Poznámky k bezpečnosti:
+<!-- Popište jakékoli bezpečnostní úvahy, kterých by si recenzenti měli být vědomi -->

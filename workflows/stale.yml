@@ -12,7 +12,7 @@ jobs:
     permissions:
       issues: write
       pull-requests: write
-    
+
     steps:
     - name: Process Stale Items
       uses: actions/stale@v8
@@ -20,51 +20,50 @@ jobs:
         # General settings
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         stale-issue-message: >
-          🇨🇿 Tento issue byl označen jako neaktivní, protože nebyl aktualizován za posledních 60 dní.
-          Bude uzavřen za 14 dní, pokud nebude žádná další aktivita. Děkujeme za pochopení!
-          
           🇬🇧 This issue has been marked as stale because it hasn't been updated in the last 60 days.
           It will be closed in 14 days if no further activity occurs. Thank you for your understanding!
-        stale-pr-message: >
-          🇨🇿 Tento pull request byl označen jako neaktivní, protože nebyl aktualizován za posledních 30 dní.
+
+          🇨🇿 Tento issue byl označen jako neaktivní, protože nebyl aktualizován za posledních 60 dní.
           Bude uzavřen za 14 dní, pokud nebude žádná další aktivita. Děkujeme za pochopení!
-          
+        stale-pr-message: >
           🇬🇧 This pull request has been marked as stale because it hasn't been updated in the last 30 days.
           It will be closed in 14 days if no further activity occurs. Thank you for your understanding!
+
+          🇨🇿 Tento pull request byl označen jako neaktivní, protože nebyl aktualizován za posledních 30 dní.
+          Bude uzavřen za 14 dní, pokud nebude žádná další aktivita. Děkujeme za pochopení!
         close-issue-message: >
-          🇨🇿 Tento issue byl automaticky uzavřen, protože byl neaktivní příliš dlouho.
-          Prosím, neváhejte jej znovu otevřít, pokud je problém stále aktuální.
-          
           🇬🇧 This issue has been automatically closed because it has been inactive for too long.
           Please feel free to reopen it if the issue is still relevant.
+
+          🇨🇿 Tento issue byl automaticky uzavřen, protože byl neaktivní příliš dlouho.
+          Prosím, neváhejte jej znovu otevřít, pokud je problém stále aktuální.
         close-pr-message: >
-          🇨🇿 Tento pull request byl automaticky uzavřen, protože byl neaktivní příliš dlouho.
-          Prosím, neváhejte jej znovu otevřít, pokud je stále relevantní.
-          
           🇬🇧 This pull request has been automatically closed because it has been inactive for too long.
           Please feel free to reopen it if it's still relevant.
-        
+
+          🇨🇿 Tento pull request byl automaticky uzavřen, protože byl neaktivní příliš dlouho.
+          Prosím, neváhejte jej znovu otevřít, pokud je stále relevantní.
+
         # Timing settings
         days-before-stale: 60     # Issues stale after 60 days
         days-before-pr-stale: 30  # PRs stale after 30 days
         days-before-close: 14     # Close 14 days after becoming stale
-        
+
         # Label settings
         stale-issue-label: 'stale'
         stale-pr-label: 'stale'
-        
+
         # Exclusion settings - never mark these as stale
-        exempt-issue-labels: 'security,pinned,feature-request,work-in-progress,documentation'
+        exempt-issue-labels: 'security,pinned,feature-request,work-in-progress,documentation,vulnerability,critical'
         exempt-pr-labels: 'security,pinned,work-in-progress,awaiting-review,blocked'
         exempt-all-milestones: true  # Don't mark issues with milestones as stale
         exempt-all-assignees: false  # Even assigned issues can become stale
-        
+
         # Other settings
         operations-per-run: 100  # Limit the number of operations per run
         ascending: true          # Process oldest items first
         remove-stale-when-updated: true  # Remove stale label on activity
-        
+
         # Special handling for security-related issues
         any-of-labels: 'security,vulnerability,bitcoin,crypto'
-        exempt-issue-labels: 'security,vulnerability,critical'  # Never mark security issues as stale
 

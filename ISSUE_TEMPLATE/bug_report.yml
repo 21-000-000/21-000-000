@@ -8,7 +8,7 @@ body:
         # 🇬🇧 Bug Report
         Thanks for reporting a bug! Please fill in the following information to help us resolve the issue quickly.
 
-        # 🇨🇿 Hlášení chyby
+        # 🇨🇿 Nahlášení chyby
         Děkujeme za nahlášení chyby! Vyplňte prosím následující informace, které nám pomohou problém rychle vyřešit.
 
   - type: input

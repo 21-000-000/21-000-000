@@ -1,111 +1,111 @@
-name: 💡 Návrh nové funkce / Feature Request
-description: Navrhnout novou funkci nebo vylepšení / Suggest a new feature or enhancement
+name: 💡 Feature Request / Návrh nové funkce
+description: Suggest a new feature or enhancement / Navrhnout novou funkci nebo vylepšení
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        # 🇨🇿 Návrh nové funkce
-        Děkujeme za váš návrh! Vaše nápady jsou pro nás důležité. Vyplňte prosím následující informace, které nám pomohou lépe pochopit váš návrh.
-        
         # 🇬🇧 Feature Request
         Thank you for your suggestion! Your ideas are important to us. Please fill in the following information to help us better understand your proposal.
+
+        # 🇨🇿 Návrh nové funkce
+        Děkujeme za váš návrh! Vaše nápady jsou pro nás důležité. Vyplňte prosím následující informace, které nám pomohou lépe pochopit váš návrh.
 
   - type: textarea
     id: problem
     attributes:
-      label: Je váš návrh spojen s nějakým problémem? / Is your feature request related to a problem?
+      label: Is your feature request related to a problem? / Je váš návrh spojen s nějakým problémem?
       description: |
-        🇨🇿 Jasný a stručný popis problému. Např. Vždy jsem frustrován, když [...]
         🇬🇧 A clear and concise description of the problem. Ex. I'm always frustrated when [...]
+        🇨🇿 Jasný a stručný popis problému. Např. Vždy jsem frustrován, když [...]
       placeholder: |
-        🇨🇿 Popište problém, který chcete vyřešit.
         🇬🇧 Describe the problem you'd like to solve.
+        🇨🇿 Popište problém, který chcete vyřešit.
     validations:
       required: false
 
   - type: textarea
     id: solution
     attributes:
-      label: Jaké řešení byste chtěli? / What solution would you like?
+      label: What solution would you like? / Jaké řešení byste chtěli?
       description: |
-        🇨🇿 Jasný a stručný popis toho, co chcete, aby se stalo.
         🇬🇧 A clear and concise description of what you want to happen.
+        🇨🇿 Jasný a stručný popis toho, co chcete, aby se stalo.
       placeholder: |
-        🇨🇿 Popište řešení, které si představujete.
         🇬🇧 Describe the solution you'd like to see.
+        🇨🇿 Popište řešení, které si představujete.
     validations:
       required: true
 
   - type: textarea
     id: alternatives
     attributes:
-      label: Jaké alternativy jste zvažovali? / What alternatives have you considered?
+      label: What alternatives have you considered? / Jaké alternativy jste zvažovali?
       description: |
-        🇨🇿 Jasný a stručný popis jakýchkoli alternativních řešení nebo funkcí, které jste zvažovali.
         🇬🇧 A clear and concise description of any alternative solutions or features you've considered.
+        🇨🇿 Jasný a stručný popis jakýchkoli alternativních řešení nebo funkcí, které jste zvažovali.
       placeholder: |
-        🇨🇿 Popište alternativní řešení, která jste zvažovali.
         🇬🇧 Describe alternative solutions you've considered.
+        🇨🇿 Popište alternativní řešení, která jste zvažovali.
     validations:
       required: false
 
   - type: dropdown
     id: importance
     attributes:
-      label: Důležitost / Importance
+      label: Importance / Důležitost
       description: |
-        🇨🇿 Jak důležitá je pro vás tato funkce?
         🇬🇧 How important is this feature to you?
+        🇨🇿 Jak důležitá je pro vás tato funkce?
       options:
-        - Kritická / Critical
-        - Vysoká / High
-        - Střední / Medium
-        - Nízká / Low
+        - Critical / Kritická
+        - High / Vysoká
+        - Medium / Střední
+        - Low / Nízká
     validations:
       required: false
 
   - type: dropdown
     id: user-impact
     attributes:
-      label: Dopad na uživatele / User Impact
+      label: User Impact / Dopad na uživatele
       description: |
-        🇨🇿 Kolik uživatelů by podle vás tato funkce ovlivnila?
         🇬🇧 How many users do you think this feature would affect?
+        🇨🇿 Kolik uživatelů by podle vás tato funkce ovlivnila?
       options:
-        - Většinu uživatelů / Most users
-        - Mnoho uživatelů / Many users
-        - Některé uživatele / Some users
-        - Jen pár uživatelů / Just a few users
-        - Nejsem si jistý/á / Not sure
+        - Most users / Většinu uživatelů
+        - Many users / Mnoho uživatelů
+        - Some users / Některé uživatele
+        - Just a few users / Jen pár uživatelů
+        - Not sure / Nejsem si jistý/á
     validations:
       required: false
 
   - type: textarea
     id: context
     attributes:
-      label: Dodatečný kontext / Additional context
+      label: Additional context / Dodatečný kontext
       description: |
-        🇨🇿 Přidejte jakýkoli další kontext nebo snímky obrazovky o návrhu funkce zde.
         🇬🇧 Add any other context or screenshots about the feature request here.
+        🇨🇿 Přidejte jakýkoli další kontext nebo snímky obrazovky o návrhu funkce zde.
       placeholder: |
-        🇨🇿 Další informace, odkazy, snímky obrazovky nebo náčrty, které by mohly pomoci vysvětlit váš návrh.
         🇬🇧 Additional information, links, screenshots, or sketches that might help explain your proposal.
+        🇨🇿 Další informace, odkazy, snímky obrazovky nebo náčrty, které by mohly pomoci vysvětlit váš návrh.
     validations:
       required: false
 
   - type: dropdown
     id: contribution
     attributes:
-      label: Přispění / Contribution
+      label: Contribution / Přispění
       description: |
-        🇨🇿 Chtěli byste na této funkci pracovat?
         🇬🇧 Would you like to work on this feature?
+        🇨🇿 Chtěli byste na této funkci pracovat?
       options:
-        - Ano, chtěl/a bych implementovat tuto funkci / Yes, I'd like to implement this feature
-        - Mohl/a bych pomoci s částí implementace / I could help with part of the implementation
-        - Ne, nemohu na tom pracovat, ale rád/a bych to viděl/a implementované / No, I can't work on it, but I'd like to see it implemented
-        - Jiné (prosím upřesněte v sekci kontext) / Other (please specify in the context section)
+        - Yes, I'd like to implement this feature / Ano, chtěl/a bych implementovat tuto funkci
+        - I could help with part of the implementation / Mohl/a bych pomoci s částí implementace
+        - No, I can't work on it, but I'd like to see it implemented / Ne, nemohu na tom pracovat, ale rád/a bych to viděl/a implementované
+        - Other (please specify in the context section) / Jiné (prosím upřesněte v sekci kontext)
     validations:
       required: false
 

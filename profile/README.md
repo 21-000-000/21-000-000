@@ -100,7 +100,6 @@ If you want to support our work, you can:
 
 ---
 
-
 # 🇨🇿 O nás
 
 ## Mise a vize
@@ -194,6 +193,6 @@ Pokud chcete podpořit naši práci, můžete:
     <!-- <a href="https://t.me/21-000-000">Telegram</a> -->
   </p>
 
-  <p>©2025 • 21-000-000 • Bitcoin Dev Community • Released under MIT License</p>
+  <p>©2025 • 21.000.000 • Bitcoin Dev Community • Released under MIT License</p>
 </div>
 

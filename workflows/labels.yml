@@ -5,7 +5,7 @@ on:
     types: [opened, edited]
   pull_request:
     types: [opened, edited]
-  
+
 jobs:
   label-issues:
     name: Label Issues and PRs
@@ -14,7 +14,7 @@ jobs:
       issues: write
       pull-requests: write
       contents: read
-    
+
     steps:
       - name: Label based on title and body content
         uses: actions/github-script@v6
@@ -24,14 +24,14 @@ jobs:
             const payload = context.payload;
             const isIssue = !!payload.issue;
             const isPR = !!payload.pull_request;
-            
+
             if (!isIssue && !isPR) return;
-            
+
             // Get the issue or PR object
             const item = isIssue ? payload.issue : payload.pull_request;
             const title = item.title.toLowerCase();
             const body = (item.body || '').toLowerCase();
-            
+
             // Define label mapping for both languages
             const labelMap = {
               // General
@@ -41,25 +41,25 @@ jobs:
               'question': ['question', 'otázka', 'help', 'pomoc', '?'],
               'good first issue': ['beginner', 'začátečník', 'good first issue', 'easy', 'jednoduchý', 'simple'],
               'security': ['security', 'bezpečnost', 'zabezpečení', 'vulnerability', 'zranitelnost', 'cve'],
-              
+
               // Bitcoin/Crypto specific
               'wallet': ['wallet', 'peněženka', 'key management', 'správa klíčů'],
               'cryptography': ['cryptography', 'kryptografie', 'crypto', 'encryption', 'šifrování'],
               'blockchain': ['blockchain', 'block', 'blok', 'chain', 'řetězec'],
               'transaction': ['transaction', 'transakce', 'tx', 'payment', 'platba'],
               'node': ['node', 'uzel', 'full node', 'plný uzel', 'lightning'],
-              
+
               // Languages
               'cs': ['czech', 'čeština', 'česky', 'cz'],
               'en': ['english', 'angličtina', 'anglicky', 'en']
             };
-            
+
             // Prepare the labels to add
             const labelsToAdd = [];
-            
+
             // Check title and body against patterns
             const contentToCheck = title + ' ' + body;
-            
+
             for (const [label, patterns] of Object.entries(labelMap)) {
               for (const pattern of patterns) {
                 if (contentToCheck.includes(pattern)) {
@@ -68,10 +68,10 @@ jobs:
                 }
               }
             }
-            
+
             // Add priority labels based on specific keywords
-            if (contentToCheck.includes('critical') || contentToCheck.includes('kritický') || 
-                contentToCheck.includes('urgent') || contentToCheck.includes('urgentní') || 
+            if (contentToCheck.includes('critical') || contentToCheck.includes('kritický') ||
+                contentToCheck.includes('urgent') || contentToCheck.includes('urgentní') ||
                 contentToCheck.includes('high priority') || contentToCheck.includes('vysoká priorita')) {
               labelsToAdd.push('priority: high');
             } else if (contentToCheck.includes('medium priority') || contentToCheck.includes('střední priorita')) {
@@ -79,11 +79,11 @@ jobs:
             } else if (contentToCheck.includes('low priority') || contentToCheck.includes('nízká priorita')) {
               labelsToAdd.push('priority: low');
             }
-            
+
             // Add the labels if there are any
             if (labelsToAdd.length > 0) {
               const uniqueLabels = [...new Set(labelsToAdd)]; // Remove duplicates
-              
+
               if (isIssue) {
                 await github.rest.issues.addLabels({
                   owner: context.repo.owner,
@@ -99,7 +99,7 @@ jobs:
                   labels: uniqueLabels
                 });
               }
-              
+
               console.log(`Added labels: ${uniqueLabels.join(', ')} to ${isIssue ? 'issue' : 'PR'} #${item.number}`);
             }
 
