@@ -22,9 +22,9 @@
 - 📋 [View our projects](https://github.com/orgs/21-000-000/repositories)
 - 🐛 [Report issues](https://github.com/21-000-000/21-000-000/issues)
 - 💬 [Join discussions](https://github.com/orgs/21-000-000/discussions)
-- 🤝 [Contributing guidelines](.github/CONTRIBUTING.md)
+- 🤝 [Contributing guidelines](CONTRIBUTING.md)
 - 📖 [Documentation wiki](https://github.com/21-000-000/21-000-000/wiki)
-- 🔒 [Security policy](.github/SECURITY.md)
+- 🔒 [Security policy](SECURITY.md)
 
 ## 🏗️ Our Projects
 
@@ -48,9 +48,9 @@ We welcome contributions from developers, educators, translators, and Bitcoin en
 5. **Testing** - Try our tools and report bugs
 
 ### Before contributing:
-- Read our [Code of Conduct](.github/CODE_OF_CONDUCT.md)
-- Review [Contributing Guidelines](.github/CONTRIBUTING.md)
-- Check our [Security Policy](.github/SECURITY.md)
+- Read our [Code of Conduct](CODE_OF_CONDUCT.md)
+- Review [Contributing Guidelines](CONTRIBUTING.md)
+- Check our [Security Policy](SECURITY.md)
 
 ## 📞 Contact & Community
 
@@ -84,9 +84,9 @@ This main repository contains:
 - 📋 [Zobrazit naše projekty](https://github.com/orgs/21-000-000/repositories)
 - 🐛 [Nahlásit problémy](https://github.com/21-000-000/21-000-000/issues)
 - 💬 [Připojit se k diskuzím](https://github.com/orgs/21-000-000/discussions)
-- 🤝 [Pokyny pro přispěvatele](.github/CONTRIBUTING.md)
+- 🤝 [Pokyny pro přispěvatele](CONTRIBUTING.md)
 - 📖 [Wiki dokumentace](https://github.com/21-000-000/21-000-000/wiki)
-- 🔒 [Bezpečnostní politika](.github/SECURITY.md)
+- 🔒 [Bezpečnostní politika](SECURITY.md)
 
 ## 🏗️ Naše projekty
 
@@ -110,9 +110,9 @@ Vítáme příspěvky od vývojářů, edukátorů, překladatelů a Bitcoin nad
 5. **Testování** - Vyzkoušejte naše nástroje a hlaste chyby
 
 ### Před přispíváním:
-- Přečtěte si náš [Kodex chování](.github/CODE_OF_CONDUCT.md)
-- Projděte si [Pokyny pro přispěvatele](.github/CONTRIBUTING.md)
-- Zkontrolujte naši [Bezpečnostní politiku](.github/SECURITY.md)
+- Přečtěte si náš [Kodex chování](CODE_OF_CONDUCT.md)
+- Projděte si [Pokyny pro přispěvatele](CONTRIBUTING.md)
+- Zkontrolujte naši [Bezpečnostní politiku](SECURITY.md)
 
 ## 📞 Kontakt & komunita
 
