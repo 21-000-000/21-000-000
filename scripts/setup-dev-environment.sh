@@ -37,7 +37,7 @@ command_exists() {
 # Check system requirements
 check_requirements() {
     log_info "Checking system requirements..."
-    
+
     # Check operating system
     if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         OS="linux"
@@ -52,7 +52,7 @@ check_requirements() {
         log_error "Unsupported operating system: $OSTYPE"
         exit 1
     fi
-    
+
     # Check Git
     if command_exists git; then
         GIT_VERSION=$(git --version | cut -d' ' -f3)
@@ -66,11 +66,11 @@ check_requirements() {
 # Install Node.js and npm
 install_nodejs() {
     log_info "Checking Node.js installation..."
-    
+
     if command_exists node; then
         NODE_VERSION=$(node --version)
         NODE_MAJOR=$(echo $NODE_VERSION | cut -d'.' -f1 | sed 's/v//')
-        
+
         if [ "$NODE_MAJOR" -ge 18 ]; then
             log_success "Node.js $NODE_VERSION is installed and compatible"
             return
@@ -78,9 +78,9 @@ install_nodejs() {
             log_warning "Node.js $NODE_VERSION is installed but version 18+ is recommended"
         fi
     fi
-    
+
     log_info "Installing Node.js..."
-    
+
     if [[ "$OS" == "macos" ]]; then
         if command_exists brew; then
             brew install node
@@ -96,24 +96,24 @@ install_nodejs() {
         log_error "Please install Node.js manually from https://nodejs.org"
         exit 1
     fi
-    
+
     log_success "Node.js installed successfully"
 }
 
 # Install Python (for some projects)
 install_python() {
     log_info "Checking Python installation..."
-    
+
     if command_exists python3; then
         PYTHON_VERSION=$(python3 --version 2>&1 | cut -d' ' -f2)
         log_success "Python $PYTHON_VERSION is installed"
-        
+
         # Install pip if not available
         if ! command_exists pip3; then
             log_info "Installing pip..."
             python3 -m ensurepip --upgrade
         fi
-        
+
         # Install pipenv for virtual environments
         if ! command_exists pipenv; then
             log_info "Installing pipenv..."
@@ -121,7 +121,7 @@ install_python() {
         fi
     else
         log_info "Installing Python..."
-        
+
         if [[ "$OS" == "macos" ]]; then
             if command_exists brew; then
                 brew install python
@@ -136,7 +136,7 @@ install_python() {
             log_error "Please install Python manually from https://python.org"
             exit 1
         fi
-        
+
         log_success "Python installed successfully"
     fi
 }
@@ -144,10 +144,10 @@ install_python() {
 # Install essential development tools
 install_dev_tools() {
     log_info "Installing essential development tools..."
-    
+
     # Install global npm packages
     npm install -g yarn pnpm
-    
+
     # Development tools
     if [[ "$OS" == "macos" ]]; then
         if command_exists brew; then
@@ -158,14 +158,14 @@ install_dev_tools() {
         # Essential tools for Linux
         sudo apt-get install -y jq curl wget tree httpie build-essential
     fi
-    
+
     log_success "Development tools installed"
 }
 
 # Setup Git configuration
 setup_git() {
     log_info "Setting up Git configuration..."
-    
+
     # Check if Git is already configured
     if git config --global user.name >/dev/null 2>&1 && git config --global user.email >/dev/null 2>&1; then
         GIT_NAME=$(git config --global user.name)
@@ -173,36 +173,36 @@ setup_git() {
         log_success "Git is already configured for $GIT_NAME ($GIT_EMAIL)"
         return
     fi
-    
+
     # Interactive Git setup
     echo
     log_info "Let's configure Git for your first commit:"
     read -p "Enter your full name: " git_name
     read -p "Enter your email address: " git_email
-    
+
     git config --global user.name "$git_name"
     git config --global user.email "$git_email"
-    
+
     # Set up some useful Git aliases
     git config --global alias.co checkout
     git config --global alias.br branch
     git config --global alias.ci commit
     git config --global alias.st status
     git config --global alias.lg "log --oneline --graph --decorate --all"
-    
+
     # Set default branch name
     git config --global init.defaultBranch main
-    
+
     # Set up better diff and merge tools
     git config --global core.editor "code --wait" 2>/dev/null || true
-    
+
     log_success "Git configured successfully"
 }
 
 # Setup project-specific environment
 setup_project_env() {
     log_info "Setting up project-specific environment..."
-    
+
     # Create .env.example if it doesn't exist
     if [ ! -f ".env.example" ]; then
         cat > .env.example << 'EOF'
@@ -228,21 +228,21 @@ LOG_LEVEL=debug
 EOF
         log_success "Created .env.example file"
     fi
-    
+
     # Copy .env.example to .env if .env doesn't exist
     if [ ! -f ".env" ]; then
         cp .env.example .env
         log_success "Created .env file from example"
         log_warning "Please update .env file with your actual configuration values"
     fi
-    
+
     # Install project dependencies
     if [ -f "package.json" ]; then
         log_info "Installing Node.js dependencies..."
         npm install
         log_success "Node.js dependencies installed"
     fi
-    
+
     if [ -f "requirements.txt" ]; then
         log_info "Installing Python dependencies..."
         if command_exists pipenv; then
@@ -252,7 +252,7 @@ EOF
         fi
         log_success "Python dependencies installed"
     fi
-    
+
     if [ -f "Cargo.toml" ]; then
         log_info "Installing Rust dependencies..."
         if command_exists cargo; then
@@ -266,17 +266,18 @@ EOF
 # Setup VS Code configuration
 setup_vscode() {
     log_info "Setting up VS Code configuration..."
-    
+
     if command_exists code; then
         # Create .vscode directory
         mkdir -p .vscode
-        
+
         # Create settings.json
         cat > .vscode/settings.json << 'EOF'
 {
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "quickfix.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
   },
   "javascript.preferences.importModuleSpecifier": "relative",
   "typescript.preferences.importModuleSpecifier": "relative",
@@ -297,13 +298,12 @@ setup_vscode() {
   }
 }
 EOF
-        
+
         # Create extensions.json
         cat > .vscode/extensions.json << 'EOF'
 {
   "recommendations": [
-    "esbenp.prettier-vscode",
-    "dbaeumer.vscode-eslint",
+    "biomejs.biome",
     "ms-python.python",
     "ms-python.black-formatter",
     "bradlc.vscode-tailwindcss",
@@ -315,7 +315,7 @@ EOF
   ]
 }
 EOF
-        
+
         log_success "VS Code configuration created"
         log_info "Consider installing recommended extensions"
     else
@@ -329,7 +329,7 @@ main() {
     log_info "21.000.000 Development Environment Setup"
     log_info "========================================"
     echo
-    
+
     check_requirements
     install_nodejs
     install_python
@@ -337,7 +337,7 @@ main() {
     setup_git
     setup_project_env
     setup_vscode
-    
+
     echo
     log_success "🎉 Development environment setup complete!"
     echo

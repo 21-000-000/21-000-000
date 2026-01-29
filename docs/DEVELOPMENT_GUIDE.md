@@ -76,20 +76,20 @@ chore(deps): bump lodash from 4.17.20 to 4.17.21
 
 #### JavaScript/TypeScript
 ```javascript
-// Use ESLint + Prettier configuration
-// .eslintrc.js example
-module.exports = {
-  extends: [
-    'eslint:recommended',
-    '@typescript-eslint/recommended',
-    'prettier'
-  ],
-  rules: {
-    'no-console': 'warn',
-    'prefer-const': 'error',
-    '@typescript-eslint/no-unused-vars': 'error'
+// Use Biome configuration
+// biome.json example
+{
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space"
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    }
   }
-};
+}
 
 // Function documentation
 /**
@@ -114,13 +114,13 @@ import requests
 def fetch_bitcoin_price(currency: str = "USD") -> Optional[float]:
     """
     Fetch current Bitcoin price in specified currency.
-    
+
     Args:
         currency: Target currency code (default: USD)
-        
+
     Returns:
         Current Bitcoin price or None if request fails
-        
+
     Raises:
         ValueError: If currency code is invalid
     """
@@ -184,10 +184,10 @@ class TestBitcoinAPI:
     def test_fetch_price_success(self, mock_get):
         # Mock successful API response
         mock_get.return_value.json.return_value = {'price': 50000}
-        
+
         result = fetch_bitcoin_price('USD')
         assert result == 50000
-        
+
     def test_fetch_price_invalid_currency(self):
         with pytest.raises(ValueError):
             fetch_bitcoin_price('INVALID')
@@ -314,28 +314,28 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '18'
         cache: 'npm'
-    
+
     - name: Install dependencies
       run: npm ci
-    
+
     - name: Run linting
-      run: npm run lint
-    
+      run: bunx biome check .
+
     - name: Run tests
       run: npm test -- --coverage
-    
+
     - name: Upload coverage
       uses: codecov/codecov-action@v3
-    
+
     - name: Build project
       run: npm run build
 
@@ -343,10 +343,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: Run security audit
       run: npm audit --audit-level=moderate
-    
+
     - name: Run CodeQL analysis
       uses: github/codeql-action/analyze@v2
 ```
@@ -358,10 +358,10 @@ deploy:
   needs: [test, security]
   runs-on: ubuntu-latest
   if: github.ref == 'refs/heads/main'
-  
+
   steps:
   - uses: actions/checkout@v3
-  
+
   - name: Deploy to production
     run: |
       # Deployment commands
@@ -438,11 +438,11 @@ const expensiveCalculation = useMemo(() => {
 }, [data]);
 
 // Image optimization
-<img 
-  src="/images/bitcoin-logo.webp" 
+<img
+  src="/images/bitcoin-logo.webp"
   alt="Bitcoin Logo"
   loading="lazy"
-  width="100" 
+  width="100"
   height="100"
 />
 ```
@@ -459,10 +459,10 @@ def cache_result(expire_time=300):
         def wrapper(*args, **kwargs):
             cache_key = f"{func.__name__}:{hash(str(args) + str(kwargs))}"
             cached = redis_client.get(cache_key)
-            
+
             if cached:
                 return json.loads(cached)
-            
+
             result = func(*args, **kwargs)
             redis_client.setex(cache_key, expire_time, json.dumps(result))
             return result
